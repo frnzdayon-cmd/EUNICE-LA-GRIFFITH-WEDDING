@@ -1,20 +1,23 @@
+
 <!DOCTYPE html>
 
 <html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Eunice & La Griffith</title>
+    <title>Eunice & La Griffith</title>
 
-<link rel="stylesheet" href="Invitation.css">
+    <link rel="stylesheet" href="Invitation.css">
 
 </head>
 
+
 <body>
+
 
 <!-- =========================================
      BACKGROUND MUSIC
@@ -32,6 +35,7 @@
     >
 
 </audio>
+
 
 
 <!-- =========================================
@@ -54,6 +58,7 @@
     <img src="Flower.png" class="petal petal-12" alt="">
 
 </div>
+
 
 
 <!-- =========================================
@@ -97,14 +102,20 @@
         </p>
 
 
-        <!-- DIVIDER -->
+
+        <!-- =========================================
+             DIVIDER
+        ========================================== -->
 
         <div class="divider">
             ♥
         </div>
 
 
-        <!-- DATE -->
+
+        <!-- =========================================
+             DATE
+        ========================================== -->
 
         <div class="date">
 
@@ -123,7 +134,10 @@
         </div>
 
 
-        <!-- CEREMONY / RECEPTION -->
+
+        <!-- =========================================
+             CEREMONY / RECEPTION
+        ========================================== -->
 
         <div class="venue-section">
 
@@ -159,14 +173,20 @@
         </div>
 
 
-        <!-- YEAR -->
+
+        <!-- =========================================
+             YEAR
+        ========================================== -->
 
         <p class="time">
             2026
         </p>
 
 
-        <!-- BUTTON -->
+
+        <!-- =========================================
+             VIEW DETAILS BUTTON
+        ========================================== -->
 
         <button
             class="details-button"
@@ -178,12 +198,16 @@
         </button>
 
 
-        <!-- DETAILS -->
+
+        <!-- =========================================
+             DETAILS
+        ========================================== -->
 
         <div
             id="details"
             class="details"
         >
+
 
             <p>
 
@@ -213,7 +237,10 @@
             </p>
 
 
-            <!-- DRESS CODE -->
+
+            <!-- =========================================
+                 DRESS CODE
+            ========================================== -->
 
             <div class="dress-code">
 
@@ -228,17 +255,121 @@
             </div>
 
 
-            <!-- COLOR PALETTE -->
+
+            <!-- =========================================
+                 COLOR PALETTE
+            ========================================== -->
 
             <h2 class="palette-title">
                 COLOR PALETTE
             </h2>
 
+
+            <img
+                src="Lavender.jpg"
+                class="palette-image"
+                alt="Lavender Color Palette"
+            >
+
+
+
+            <!-- =========================================
+                 GUEST COMMENTS
+            ========================================== -->
+
+            <div class="comments-section">
+
+
+                <!-- COMMENT TITLE -->
+
+                <h2 class="comments-title">
+                    ♥ Leave a Message ♥
+                </h2>
+
+
+                <p class="comments-subtitle">
+
+                    Share your wishes,
+                    messages, and love with us.
+
+                </p>
+
+
+
+                <!-- =====================================
+                     COMMENT FORM
+                ====================================== -->
+
+                <div class="comment-form">
+
+
+                    <!-- NAME -->
+
+                    <input
+                        type="text"
+                        id="commentName"
+                        placeholder="Your Name"
+                        maxlength="40"
+                    >
+
+
+                    <!-- MESSAGE -->
+
+                    <textarea
+                        id="commentText"
+                        placeholder="Write your message..."
+                        maxlength="300"
+                    ></textarea>
+
+
+                    <!-- POST BUTTON -->
+
+                    <button
+                        type="button"
+                        onclick="addComment()"
+                    >
+
+                        ♥ POST MESSAGE
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- =====================================
+                     OTHER PEOPLE'S COMMENTS
+                ====================================== -->
+
+                <div class="comments-list-section">
+
+
+                    <h3>
+                        Messages & Wishes
+                    </h3>
+
+
+                    <!--
+                        JavaScript will automatically
+                        display the comments here.
+                    -->
+
+                    <div id="commentsList"></div>
+
+
+                </div>
+
+
+            </div>
+
+
         </div>
+
 
     </div>
 
 </main>
+
 
 
 <!-- =========================================
@@ -247,68 +378,371 @@
 
 <script>
 
-    const weddingMusic =
-        document.getElementById("weddingMusic");
+
+/* =========================================
+   BACKGROUND MUSIC
+========================================== */
+
+const weddingMusic =
+    document.getElementById("weddingMusic");
 
 
-    /*
-     * Play music when the invitation opens.
-     */
+/*
+ * Play music when the invitation opens.
+ */
 
-    window.addEventListener("load", function () {
-
-        weddingMusic.volume = 0.5;
-
-        const playMusic =
-            weddingMusic.play();
+window.addEventListener("load", function () {
 
 
-        if (playMusic !== undefined) {
-
-            playMusic.catch(function () {
-
-                /*
-                 * Some browsers block autoplay.
-                 * If blocked, the first tap/click
-                 * will start the music.
-                 */
-
-                document.addEventListener(
-                    "click",
-                    function startMusic() {
-
-                        weddingMusic.play();
-
-                        document.removeEventListener(
-                            "click",
-                            startMusic
-                        );
-
-                    },
-                    { once: true }
-                );
-
-            });
-
-        }
-
-    });
+    weddingMusic.volume = 0.5;
 
 
-    /* =========================================
-       VIEW DETAILS
-    ========================================== */
+    const playMusic =
+        weddingMusic.play();
 
-    function showDetails() {
 
-        const details =
-            document.getElementById("details");
+    if (playMusic !== undefined) {
 
-        details.classList.toggle("show");
+
+        playMusic.catch(function () {
+
+
+            /*
+             * Some browsers block autoplay.
+             *
+             * If autoplay is blocked,
+             * the first tap/click starts
+             * the music.
+             */
+
+            document.addEventListener(
+                "click",
+                function startMusic() {
+
+
+                    weddingMusic.play();
+
+
+                    document.removeEventListener(
+                        "click",
+                        startMusic
+                    );
+
+
+                },
+                { once: true }
+            );
+
+
+        });
+
 
     }
 
+
+});
+
+
+
+/* =========================================
+   VIEW DETAILS
+========================================== */
+
+function showDetails() {
+
+
+    const details =
+        document.getElementById("details");
+
+
+    details.classList.toggle("show");
+
+
+}
+
+
+
+/* =========================================
+   COMMENTS SYSTEM
+========================================== */
+
+
+/*
+ * Get previously saved comments.
+ *
+ * If there are no comments yet,
+ * create an empty array.
+ */
+
+let comments =
+    JSON.parse(
+        localStorage.getItem(
+            "weddingComments"
+        )
+    ) || [];
+
+
+
+/* =========================================
+   ADD COMMENT
+========================================== */
+
+function addComment() {
+
+
+    /*
+     * Get the name and message
+     * entered by the guest.
+     */
+
+    const nameInput =
+        document.getElementById(
+            "commentName"
+        );
+
+
+    const textInput =
+        document.getElementById(
+            "commentText"
+        );
+
+
+    const name =
+        nameInput.value.trim();
+
+
+    const text =
+        textInput.value.trim();
+
+
+
+    /*
+     * Make sure the guest
+     * entered both fields.
+     */
+
+    if (name === "" || text === "") {
+
+
+        alert(
+            "Please enter your name and message."
+        );
+
+
+        return;
+
+    }
+
+
+
+    /*
+     * Create a new comment.
+     */
+
+    const newComment = {
+
+
+        name: name,
+
+
+        message: text,
+
+
+        /*
+         * Save the date and time
+         * when the message was posted.
+         */
+
+        date:
+            new Date().toLocaleString()
+
+    };
+
+
+
+    /*
+     * Add the comment to the list.
+     */
+
+    comments.push(newComment);
+
+
+
+    /*
+     * Save comments inside
+     * the visitor's browser.
+     */
+
+    localStorage.setItem(
+        "weddingComments",
+        JSON.stringify(comments)
+    );
+
+
+
+    /*
+     * Clear the form.
+     */
+
+    nameInput.value = "";
+
+    textInput.value = "";
+
+
+
+    /*
+     * Display the new comment.
+     */
+
+    displayComments();
+
+}
+
+
+
+/* =========================================
+   DISPLAY COMMENTS
+========================================== */
+
+function displayComments() {
+
+
+    const commentsList =
+        document.getElementById(
+            "commentsList"
+        );
+
+
+    /*
+     * Clear the current comments.
+     */
+
+    commentsList.innerHTML = "";
+
+
+
+    /*
+     * Show newest comments first.
+     */
+
+    const newestFirst =
+        [...comments].reverse();
+
+
+
+    /*
+     * Create a comment box
+     * for every guest.
+     */
+
+    newestFirst.forEach(
+        function (comment) {
+
+
+            const commentBox =
+                document.createElement(
+                    "div"
+                );
+
+
+            commentBox.className =
+                "comment-box";
+
+
+
+            /*
+             * Guest name
+             */
+
+            const guestName =
+                document.createElement(
+                    "h4"
+                );
+
+
+            guestName.textContent =
+                "♥ " + comment.name;
+
+
+
+            /*
+             * Guest message
+             */
+
+            const guestMessage =
+                document.createElement(
+                    "p"
+                );
+
+
+            guestMessage.textContent =
+                comment.message;
+
+
+
+            /*
+             * Date and time
+             */
+
+            const commentDate =
+                document.createElement(
+                    "small"
+                );
+
+
+            commentDate.textContent =
+                comment.date;
+
+
+
+            /*
+             * Put everything
+             * inside the comment box.
+             */
+
+            commentBox.appendChild(
+                guestName
+            );
+
+
+            commentBox.appendChild(
+                guestMessage
+            );
+
+
+            commentBox.appendChild(
+                commentDate
+            );
+
+
+
+            /*
+             * Put the comment box
+             * onto the webpage.
+             */
+
+            commentsList.appendChild(
+                commentBox
+            );
+
+
+        }
+    );
+
+
+}
+
+
+
+/* =========================================
+   LOAD COMMENTS WHEN PAGE OPENS
+========================================== */
+
+displayComments();
+
+
 </script>
+
 
 </body>
 
