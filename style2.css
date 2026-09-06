@@ -1038,34 +1038,18 @@ body {
        CENTER STAMP
     ================================= */
 
- .center-stamp {
-    position: absolute;
+    .center-stamp {
 
-    left: 50%;
-    top: 55%;
+        width: 50%;
 
-    transform: translate(-50%, -50%);
+        height: 50%px;
 
-    width: 90px;
-    height: 50px;
+        left: 50%;
 
-    z-index: 8;
+        top: 55%;
 
-    pointer-events: none;
+    }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.center-stamp img {
-    width: 90%;
-    height: 50%;
-
-    object-fit: contain;
-
-    display: block;
-}
 
     /* ================================
        TAP SIGN
@@ -1098,7 +1082,7 @@ body {
 
     .envelope-container {
 
-        width: 56vw;
+        width: 84vw;
 
         height: 59vw;
 
@@ -1133,9 +1117,9 @@ body {
 
     .center-stamp {
 
-        width: 10px;
+        width: 50px;
 
-        height: 10px;
+        height: 50px;
 
         top: 55%;
 
