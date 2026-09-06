@@ -381,9 +381,6 @@
                 0.15
             );
 
-        animation:
-            fadeIn
-            1.5s ease;
     }
 
 
@@ -615,9 +612,6 @@
 
         cursor: pointer;
 
-        transition:
-            background 0.3s ease,
-            transform 0.3s ease;
     }
 
 
@@ -660,7 +654,7 @@
     .details.show {
 
         max-height: none;
-        overflow: visible;
+        overflow: hidden;
         opacity: 1;
         margin-top: 25px;
     }
