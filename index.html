@@ -1,136 +1,172 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 
-<html lang="en">
+    <html lang="en">
 
-<head>
+    <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Wedding Invitation</title>
+    <title>Wedding Invitation</title>
 
-<link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style2.css">
 
-
-</head>
-
-<body>
+    </head>
 
 
-<!-- =========================================
-     DECORATIVE BACKGROUND
-========================================== -->
-
-<div class="background-glow glow-one"></div>
-<div class="background-glow glow-two"></div>
+    <body>
 
 
-<!-- FLOATING HEARTS -->
+    <!-- =========================================
+        DECORATIVE BACKGROUND
+    ========================================== -->
 
-<div class="floating-hearts">
+    <div class="background-glow glow-one"></div>
 
-    <span>♡</span>
-    <span>♡</span>
-    <span>♡</span>
-    <span>♡</span>
-    <span>♡</span>
-    <span>♡</span>
-
-</div>
+    <div class="background-glow glow-two"></div>
 
 
-<!-- =========================================
-     WEDDING INVITATION ENVELOPE
-========================================== -->
+    <!-- =========================================
+        FLOATING HEARTS
+    ========================================== -->
 
-<div
-    class="envelope-container"
-    onclick="openEnvelope()"
->
+    <div class="floating-hearts">
 
-    <!-- DECORATIVE OUTER FRAME -->
-
-    <div class="envelope-frame">
-
-        <span class="corner corner-top-left"></span>
-        <span class="corner corner-top-right"></span>
-        <span class="corner corner-bottom-left"></span>
-        <span class="corner corner-bottom-right"></span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
 
     </div>
 
 
-    <div class="envelope">
+    <!-- =========================================
+        WEDDING INVITATION ENVELOPE
+    ========================================== -->
+
+    <div
+        class="envelope-container"
+        onclick="openEnvelope()"
+    >
 
 
-        <!-- LETTER -->
+        <!-- =====================================
+            DECORATIVE OUTER FRAME
+        ====================================== -->
 
-        <div class="letter">
+        <div class="envelope-frame">
 
-            <div class="letter-decoration">
-                ✦
+            <span class="corner corner-top-left"></span>
+            <span class="corner corner-top-right"></span>
+            <span class="corner corner-bottom-left"></span>
+            <span class="corner corner-bottom-right"></span>
+
+        </div>
+
+
+        <!-- =====================================
+            ENVELOPE
+        ====================================== -->
+
+        <div class="envelope">
+
+
+            <!-- =================================
+                LETTER
+            ================================== -->
+
+            <div class="letter">
+
+                <div class="letter-decoration">
+                    ✦
+                </div>
+
+                <p>
+                    WEDDING INVITATION
+                </p>
+
+                <h1>
+                    EUNICE
+                </h1>
+
+                <span class="letter-and">
+                    &
+                </span>
+
+                <h2>
+                    LA GRIFFITH
+                </h2>
+
+                <div class="letter-line"></div>
+
+                <small>
+                    OCTOBER 02 · 2026
+                </small>
+
             </div>
 
-            <p>
-                WEDDING INVITATION
-            </p>
 
-            <h1>
-                EUNICE
-            </h1>
+            <!-- =================================
+                ENVELOPE FRONT
+            ================================== -->
 
-            <span class="letter-and">
-                &
-            </span>
-
-            <h2>
-                LA GRIFFITH
-            </h2>
-
-            <div class="letter-line"></div>
-
-            <small>
-                OCTOBER 02 · 2026
-            </small>
-
-        </div>
+            <div class="front"></div>
 
 
-        <!-- ENVELOPE FRONT -->
+            <!-- =================================
+                ENVELOPE FLAP
+            ================================== -->
 
-        <div class="front"></div>
-
-
-        <!-- ENVELOPE FLAP -->
-
-        <div class="flap"></div>
+            <div class="flap"></div>
 
 
-        <!-- TAP SIGN -->
+            <!-- =================================
+                CENTER STAMP
+                
+                Make sure the image filename
+                is exactly: Stamp.png
+            ================================== -->
 
-        <div class="tap-sign">
+            <div class="center-stamp">
 
-            <span class="tap-text">
-                TAP HERE
-            </span>
+                <img
+                    src="Stamp.png"
+                    alt="Wedding Stamp"
+                >
 
-            <span class="tap-heart">
-                ♡
-            </span>
+            </div>
+
+
+            <!-- =================================
+                TAP SIGN
+            ================================== -->
+
+            <div class="tap-sign">
+
+                <span class="tap-text">
+                    TAP HERE
+                </span>
+
+                <span class="tap-heart">
+                    ♡
+                </span>
+
+            </div>
+
 
         </div>
 
     </div>
 
-</div>
 
+    <!-- =========================================
+        JAVASCRIPT
+    ========================================== -->
 
-<!-- =========================================
-     JAVASCRIPT
-========================================== -->
-
-<script>
+    <script>
 
     let envelopeOpened = false;
 
@@ -145,13 +181,13 @@
 
 
         const envelope =
-            document.querySelector(".envelope-container");
+            document.querySelector(".envelope");
 
 
         /*
-         * Tell the invitation page
-         * that the user opened the envelope.
-         */
+        * Tell the invitation page
+        * that the user opened the envelope.
+        */
 
         sessionStorage.setItem(
             "playWeddingMusic",
@@ -160,22 +196,24 @@
 
 
         /*
-         * Open envelope animation
-         */
+        * Open envelope animation
+        */
 
-        envelope.classList.add("open");
+        document
+            .querySelector(".envelope-container")
+            .classList.add("open");
 
 
         /*
-         * IMPORTANT:
-         * This MUST match the filename exactly.
-         *
-         * Invitation.html
-         * NOT
-         * invitation.html
-         */
+        * IMPORTANT:
+        * This MUST match the filename exactly.
+        *
+        * Invitation.html
+        * NOT
+        * invitation.html
+        */
 
-        setTimeout(function () {
+        setTimeout(function() {
 
             window.location.href = "Invitation.html";
 
@@ -183,9 +221,9 @@
 
     }
 
-</script>
+    </script>
 
 
-</body>
+    </body>
 
-</html>
+    </html>
