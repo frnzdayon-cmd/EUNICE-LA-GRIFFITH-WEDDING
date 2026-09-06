@@ -713,8 +713,8 @@ body {
     transform:
         translate(-50%, -50%);
 
-    width: 15px;
-    height: 15px;
+    width: 75px;
+    height: 75px;
 
     z-index: 8;
 
@@ -1046,8 +1046,8 @@ body {
 
     transform: translate(-50%, -50%);
 
-    width: 20px;
-    height: 20px;
+    width: 90px;
+    height: 50px;
 
     z-index: 8;
 
@@ -1059,7 +1059,7 @@ body {
 }
 
 .center-stamp img {
-    width: 20px;
+    width: 90%;
     height: 50%;
 
     object-fit: contain;
@@ -1098,7 +1098,7 @@ body {
 
     .envelope-container {
 
-        width: 84vw;
+        width: 56vw;
 
         height: 59vw;
 
