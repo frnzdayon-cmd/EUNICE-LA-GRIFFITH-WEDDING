@@ -1,1338 +1,1216 @@
 
-/* =========================================
-   RESET
-========================================= */
+    /* =========================================
+    RESET
+    ========================================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
 
-/* =========================================
-   BODY
-========================================= */
+    /* =========================================
+    BODY
+    ========================================= */
 
-body {
+    body {
 
-    min-height: 100vh;
+        min-height: 100vh;
 
-    background:
-        linear-gradient(
-            135deg,
-            #eadff0,
-            #f8eef8,
-            #e1d0e8
-        );
+        background:
+            linear-gradient(
+                135deg,
+                #eadff0,
+                #f8eef8,
+                #e1d0e8
+            );
 
-    font-family:
-        'Franklin Gothic Medium',
-        'Arial Narrow',
-        Arial,
-        sans-serif;
+        font-family:
+            'Franklin Gothic Medium',
+            'Arial Narrow',
+            Arial,
+            sans-serif;
 
-    color: #80618f;
-}
+        color: #80618f;
+    }
 
 
-/* =========================================
-   FALLING PETALS
-========================================= */
+    /* =========================================
+    FALLING PETALS
+    ========================================= */
 
-.petal-container {
+    .petal-container {
 
-    position: fixed;
+        position: fixed;
 
-    top: 0;
-    left: 0;
+        top: 0;
+        left: 0;
 
-    width: 100%;
-    height: 100vh;
+        width: 100%;
+        height: 100vh;
 
-    pointer-events: none;
+        pointer-events: none;
 
-    overflow: hidden;
+        overflow: hidden;
 
-    z-index: 100;
-}
+        z-index: 100;
+    }
 
 
-.petal {
+    .petal {
 
-    position: absolute;
-
-    top: -100px;
-
-    width: 45px;
-    height: auto;
-
-    opacity: 0;
-
-    object-fit: contain;
-
-    filter:
-        drop-shadow(
-            0 5px 6px
-            rgba(
-                80,
-                40,
-                90,
-                0.25
-            )
-        );
-
-    animation:
-        petalFall
-        linear
-        infinite;
-}
-
-
-/* =========================================
-   PETAL POSITIONS
-========================================= */
-
-.petal-1 {
-
-    left: 5%;
-
-    width: 35px;
-
-    animation-duration: 9s;
-
-    animation-delay: 0s;
-}
-
-
-.petal-2 {
-
-    left: 14%;
-
-    width: 50px;
-
-    animation-duration: 12s;
-
-    animation-delay: 2s;
-}
-
-
-.petal-3 {
-
-    left: 25%;
-
-    width: 30px;
-
-    animation-duration: 8s;
-
-    animation-delay: 4s;
-}
-
-
-.petal-4 {
-
-    left: 35%;
-
-    width: 45px;
-
-    animation-duration: 11s;
-
-    animation-delay: 1s;
-}
-
-
-.petal-5 {
-
-    left: 45%;
-
-    width: 28px;
-
-    animation-duration: 10s;
-
-    animation-delay: 5s;
-}
-
-
-.petal-6 {
-
-    left: 55%;
-
-    width: 48px;
-
-    animation-duration: 13s;
-
-    animation-delay: 3s;
-}
-
-
-.petal-7 {
-
-    left: 65%;
-
-    width: 32px;
-
-    animation-duration: 9s;
-
-    animation-delay: 6s;
-}
-
-
-.petal-8 {
-
-    left: 73%;
-
-    width: 55px;
-
-    animation-duration: 12s;
-
-    animation-delay: 1.5s;
-}
-
-
-.petal-9 {
-
-    left: 82%;
-
-    width: 35px;
-
-    animation-duration: 10s;
-
-    animation-delay: 4.5s;
-}
-
-
-.petal-10 {
-
-    left: 90%;
-
-    width: 45px;
-
-    animation-duration: 14s;
-
-    animation-delay: 7s;
-}
-
-
-.petal-11 {
-
-    left: 18%;
-
-    width: 25px;
-
-    animation-duration: 7s;
-
-    animation-delay: 8s;
-}
-
-
-.petal-12 {
-
-    left: 60%;
-
-    width: 25px;
-
-    animation-duration: 8s;
-
-    animation-delay: 9s;
-}
-
-
-/* =========================================
-   PETAL FALLING ANIMATION
-========================================= */
-
-@keyframes petalFall {
-
-    0% {
+        position: absolute;
 
         top: -100px;
 
-        opacity: 0;
-
-        transform:
-            translateX(0)
-            rotate(0deg)
-            scale(0.7);
-    }
-
-
-    10% {
-
-        opacity: 0.9;
-    }
-
-
-    25% {
-
-        transform:
-            translateX(70px)
-            rotate(90deg)
-            scale(0.9);
-    }
-
-
-    50% {
-
-        transform:
-            translateX(-50px)
-            rotate(180deg)
-            scale(1);
-    }
-
-
-    75% {
-
-        transform:
-            translateX(80px)
-            rotate(270deg)
-            scale(0.85);
-    }
-
-
-    90% {
-
-        opacity: 0.8;
-    }
-
-
-    100% {
-
-        top: 110vh;
+        width: 45px;
+        height: auto;
 
         opacity: 0;
 
-        transform:
-            translateX(-40px)
-            rotate(360deg)
-            scale(0.7);
+        object-fit: contain;
+
+        filter:
+            drop-shadow(
+                0 5px 6px
+                rgba(
+                    80,
+                    40,
+                    90,
+                    0.25
+                )
+            );
+
+        animation:
+            petalFall
+            linear
+            infinite;
     }
 
-}
+
+    /* =========================================
+    PETAL POSITIONS
+    ========================================= */
+
+    .petal-1 {
+
+        left: 5%;
+
+        width: 35px;
+
+        animation-duration: 9s;
+
+        animation-delay: 0s;
+    }
 
 
-/* =========================================
-   INVITATION
-========================================= */
+    .petal-2 {
 
-.invitation {
+        left: 14%;
 
-    min-height: 100vh;
+        width: 50px;
 
-    display: flex;
+        animation-duration: 12s;
 
-    justify-content: center;
-
-    align-items: center;
-
-    padding: 40px 20px;
-}
+        animation-delay: 2s;
+    }
 
 
-/* =========================================
-   CONTENT
-========================================= */
+    .petal-3 {
 
-.content {
+        left: 25%;
 
-    position: relative;
+        width: 30px;
 
-    width: 100%;
+        animation-duration: 8s;
 
-    max-width: 600px;
-
-    padding: 50px 30px;
-
-    text-align: center;
-
-    background:
-        rgba(
-            225,
-            200,
-            227,
-            0.8
-        );
-
-    border:
-        1px solid
-        rgba(
-            155,
-            131,
-            170,
-            0.3
-        );
-
-    box-shadow:
-        0 20px 50px
-        rgba(
-            100,
-            70,
-            110,
-            0.15
-        );
-
-    animation:
-        fadeIn
-        1.5s ease;
-}
+        animation-delay: 4s;
+    }
 
 
-/* =========================================
-   FADE IN
-========================================= */
+    .petal-4 {
 
-@keyframes fadeIn {
+        left: 35%;
 
-    from {
+        width: 45px;
 
+        animation-duration: 11s;
+
+        animation-delay: 1s;
+    }
+
+
+    .petal-5 {
+
+        left: 45%;
+
+        width: 28px;
+
+        animation-duration: 10s;
+
+        animation-delay: 5s;
+    }
+
+
+    .petal-6 {
+
+        left: 55%;
+
+        width: 48px;
+
+        animation-duration: 13s;
+
+        animation-delay: 3s;
+    }
+
+
+    .petal-7 {
+
+        left: 65%;
+
+        width: 32px;
+
+        animation-duration: 9s;
+
+        animation-delay: 6s;
+    }
+
+
+    .petal-8 {
+
+        left: 73%;
+
+        width: 55px;
+
+        animation-duration: 12s;
+
+        animation-delay: 1.5s;
+    }
+
+
+    .petal-9 {
+
+        left: 82%;
+
+        width: 35px;
+
+        animation-duration: 10s;
+
+        animation-delay: 4.5s;
+    }
+
+
+    .petal-10 {
+
+        left: 90%;
+
+        width: 45px;
+
+        animation-duration: 14s;
+
+        animation-delay: 7s;
+    }
+
+
+    .petal-11 {
+
+        left: 18%;
+
+        width: 25px;
+
+        animation-duration: 7s;
+
+        animation-delay: 8s;
+    }
+
+
+    .petal-12 {
+
+        left: 60%;
+
+        width: 25px;
+
+        animation-duration: 8s;
+
+        animation-delay: 9s;
+    }
+
+
+    /* =========================================
+    PETAL FALLING ANIMATION
+    ========================================= */
+
+    @keyframes petalFall {
+
+        0% {
+
+            top: -100px;
+
+            opacity: 0;
+
+            transform:
+                translateX(0)
+                rotate(0deg)
+                scale(0.7);
+        }
+
+
+        10% {
+
+            opacity: 0.9;
+        }
+
+
+        25% {
+
+            transform:
+                translateX(70px)
+                rotate(90deg)
+                scale(0.9);
+        }
+
+
+        50% {
+
+            transform:
+                translateX(-50px)
+                rotate(180deg)
+                scale(1);
+        }
+
+
+        75% {
+
+            transform:
+                translateX(80px)
+                rotate(270deg)
+                scale(0.85);
+        }
+
+
+        90% {
+
+            opacity: 0.8;
+        }
+
+
+        100% {
+
+            top: 110vh;
+
+            opacity: 0;
+
+            transform:
+                translateX(-40px)
+                rotate(360deg)
+                scale(0.7);
+        }
+
+    }
+
+
+    /* =========================================
+    INVITATION
+    ========================================= */
+
+    .invitation {
+
+        min-height: 100vh;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        padding: 40px 20px;
+    }
+
+
+    /* =========================================
+    CONTENT
+    ========================================= */
+
+    .content {
+        
+
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        padding: 50px 30px;
+        text-align: center;
+
+        background:
+            linear-gradient(
+                rgba(
+                    225,
+                    200,
+                    227,
+                    0.55
+                ),
+                rgba(
+                    225,
+                    200,
+                    227,
+                    0.55
+                )
+            ),
+            url("WeddingBackground.jpg");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+
+        border:
+            1px solid
+            rgba(
+                155,
+                131,
+                170,
+                0.3
+            );
+
+        box-shadow:
+            0 20px 50px
+            rgba(
+                100,
+                70,
+                110,
+                0.15
+            );
+
+        animation:
+            fadeIn
+            1.5s ease;
+    }
+
+
+    /* =========================================
+    TEXT
+    ========================================= */
+
+    .small-title {
+
+        font-size: 12px;
+
+        letter-spacing: 3px;
+
+        color: #a58bb5;
+
+        margin-bottom: 25px;
+    }
+
+
+    h1 {
+
+    font-family: 'Bodoni Moda', 'Didot', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-weight:bolder;
+        font-size: 45px;
+
+        font-weight: normal;
+
+        line-height: 1.2;
+
+        color: #80618f;
+    }
+
+
+    h1 span {
+
+        display: block;
+
+        font-size: 25px;
+
+        margin: 5px 0;
+
+        color: #b28dbb;
+    }
+
+
+    .subtitle {
+
+        margin-top: 25px;
+
+        font-size: 12px;
+
+        letter-spacing: 2px;
+
+        color: #9b83aa;
+    }
+
+
+    .message {
+
+        margin-top: 20px;
+
+        font-family:
+            Georgia,
+            serif;
+
+        font-size: 16px;
+
+        line-height: 1.8;
+
+        color: #91779e;
+    }
+
+
+    /* =========================================
+    DIVIDER
+    ========================================= */
+
+    .divider {
+
+        margin: 30px 0;
+
+        color: #b28dbb;
+
+        font-size: 25px;
+    }
+
+
+    /* =========================================
+    DATE
+    ========================================= */
+
+    .date {
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 25px;
+
+        color: #80618f;
+    }
+
+
+    .date span {
+
+        font-size: 13px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .date strong {
+
+        font-family:
+            Georgia,
+            serif;
+
+        font-size: 55px;
+
+        font-weight: normal;
+    }
+
+
+    /* =========================================
+    CEREMONY / RECEPTION
+    ========================================= */
+
+    .venue-section {
+
+        width: 100%;
+
+        margin-top: 25px;
+
+        color: #80618f;
+    }
+
+
+    .venue-top {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        text-align: center;
+
+        font-size: 13px;
+
+        letter-spacing: 2px;
+    }
+
+
+    /* =========================================
+    CONTINUOUS CENTER LINE
+    ========================================= */
+
+    .venue-line {
+
+        width: 1px;
+
+        height: 30px;
+
+        background-color: #a58bb5;
+
+        margin: 5px auto 0;
+    }
+
+
+    /* =========================================
+    BOTTOM ROW
+    ========================================= */
+
+    .venue-bottom {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        text-align: center;
+
+        font-size: 12px;
+
+        letter-spacing: 1.5px;
+
+        color: #9b7eaa;
+    }
+
+
+    /* =========================================
+    YEAR
+    ========================================= */
+
+    .time {
+
+        margin-top: 20px;
+
+        font-size: 55px;
+
+        letter-spacing: 3px;
+    }
+
+
+    /* =========================================
+    BUTTON
+    ========================================= */
+
+    .details-button {
+
+        margin-top: 35px;
+
+        padding: 12px 25px;
+
+        border: none;
+
+        border-radius: 25px;
+
+        background: #9b719e;
+
+        color: white;
+
+        font-size: 12px;
+
+        letter-spacing: 2px;
+
+        cursor: pointer;
+
+        transition:
+            background 0.3s ease,
+            transform 0.3s ease;
+    }
+
+
+    .details-button:hover {
+
+        background: #80618f;
+
+        transform:
+            translateY(-2px);
+    }
+
+
+    .details-button:active {
+
+        transform:
+            scale(0.95);
+    }
+
+
+    /* =========================================
+    DETAILS
+    ========================================= */
+
+    .details {
+
+        max-height: 0;
+        overflow: hidden;
         opacity: 0;
-
-        transform:
-            translateY(30px);
+        color: #91779e;
+        font-family: Georgia, serif;
+        font-size: 15px;
+        line-height: 1.8;
+        
+        transition:
+            max-height 0.7s ease,
+            opacity 0.5s ease;
     }
 
 
-    to {
+    .details.show {
 
+        max-height: none;
+        overflow: visible;
         opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-
-}
-
-
-/* =========================================
-   TEXT
-========================================= */
-
-.small-title {
-
-    font-size: 12px;
-
-    letter-spacing: 3px;
-
-    color: #a58bb5;
-
-    margin-bottom: 25px;
-}
-
-
-h1 {
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 45px;
-
-    font-weight: normal;
-
-    line-height: 1.2;
-
-    color: #80618f;
-}
-
-
-h1 span {
-
-    display: block;
-
-    font-size: 25px;
-
-    margin: 5px 0;
-
-    color: #b28dbb;
-}
-
-
-.subtitle {
-
-    margin-top: 25px;
-
-    font-size: 12px;
-
-    letter-spacing: 2px;
-
-    color: #9b83aa;
-}
-
-
-.message {
-
-    margin-top: 20px;
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 16px;
-
-    line-height: 1.8;
-
-    color: #91779e;
-}
-
-
-/* =========================================
-   DIVIDER
-========================================= */
-
-.divider {
-
-    margin: 30px 0;
-
-    color: #b28dbb;
-
-    font-size: 25px;
-}
-
-
-/* =========================================
-   DATE
-========================================= */
-
-.date {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 25px;
-
-    color: #80618f;
-}
-
-
-.date span {
-
-    font-size: 13px;
-
-    letter-spacing: 2px;
-}
-
-
-.date strong {
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 55px;
-
-    font-weight: normal;
-}
-
-
-/* =========================================
-   CEREMONY / RECEPTION
-========================================= */
-
-.venue-section {
-
-    width: 100%;
-
-    margin-top: 25px;
-
-    color: #80618f;
-}
-
-
-.venue-top {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    text-align: center;
-
-    font-size: 13px;
-
-    letter-spacing: 2px;
-}
-
-
-/* =========================================
-   CONTINUOUS CENTER LINE
-========================================= */
-
-.venue-line {
-
-    width: 1px;
-
-    height: 30px;
-
-    background-color: #a58bb5;
-
-    margin: 5px auto 0;
-}
-
-
-/* =========================================
-   BOTTOM ROW
-========================================= */
-
-.venue-bottom {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    text-align: center;
-
-    font-size: 12px;
-
-    letter-spacing: 1.5px;
-
-    color: #9b7eaa;
-}
-
-
-/* =========================================
-   YEAR
-========================================= */
-
-.time {
-
-    margin-top: 20px;
-
-    font-size: 55px;
-
-    letter-spacing: 3px;
-}
-
-
-/* =========================================
-   BUTTON
-========================================= */
-
-.details-button {
-
-    margin-top: 35px;
-
-    padding: 12px 25px;
-
-    border: none;
-
-    border-radius: 25px;
-
-    background: #9b719e;
-
-    color: white;
-
-    font-size: 12px;
-
-    letter-spacing: 2px;
-
-    cursor: pointer;
-
-    transition:
-        background 0.3s ease,
-        transform 0.3s ease;
-}
-
-
-.details-button:hover {
-
-    background: #80618f;
-
-    transform:
-        translateY(-2px);
-}
-
-
-.details-button:active {
-
-    transform:
-        scale(0.95);
-}
-
-
-/* =========================================
-   DETAILS
-========================================= */
-
-.details {
-
-    max-height: 0;
-
-    overflow: hidden;
-
-    opacity: 0;
-
-    transition:
-        max-height 0.7s ease,
-        opacity 0.5s ease;
-
-    color: #91779e;
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 15px;
-
-    line-height: 1.8;
-}
-
-
-.details.show {
-
-    max-height: 1800px;
-
-    opacity: 1;
-
-    margin-top: 25px;
-}
-
-
-.details p {
-
-    margin-bottom: 15px;
-
-    letter-spacing: 2px;
-
-    color: #91779e;
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 15px;
-
-    line-height: 1.2;
-}
-
-
-/* =========================================
-   DRESS CODE
-========================================= */
-
-.dress-code {
-
-    display: flex;
-
-    align-items: center;
-
-    font-family: sans-serif;
-
-    font-size: 18px;
-
-    color: #a58bb5;
-
-    margin: 20px 0;
-}
-
-
-.dress-code div {
-
-    flex: 1;
-
-    height: 2px;
-
-    background-color: #a58bb5;
-}
-
-
-.dress-code span {
-
-    padding: 0 15px;
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 20px;
-
-    line-height: 1.8;
-}
-
-
-/* =========================================
-   COLOR PALETTE
-========================================= */
-
-.palette-title {
-
-    letter-spacing: 5px;
-
-    margin-top: 20px;
-
-    margin-bottom: 15px;
-}
-
-
-.palette-image {
-
-    max-width: 100%;
-
-    height: auto;
-
-    display: block;
-
-    margin: 0 auto;
-}
-
-
-/* =========================================
-   ✨ LUXURY WEDDING MESSAGE SECTION
-========================================= */
-
-.comments-section {
-
-    position: relative;
-
-    margin-top: 45px;
-
-    padding: 38px 25px 30px;
-
-    border-radius: 25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(
-                255,
-                255,
-                255,
-                0.65
-            ),
-            rgba(
-                238,
-                219,
-                244,
-                0.55
-            )
-        );
-
-    border:
-        1px solid
-        rgba(
-            165,
-            139,
-            181,
-            0.45
-        );
-
-    box-shadow:
-
-        0 20px 45px
-        rgba(
-            90,
-            55,
-            105,
-            0.16
-        ),
-
-        inset 0 1px 0
-        rgba(
-            255,
-            255,
-            255,
-            0.8
-        );
-
-    backdrop-filter:
-        blur(12px);
-
-    -webkit-backdrop-filter:
-        blur(12px);
-
-    overflow: hidden;
-}
-
-
-/* =========================================
-   ✨ DECORATIVE GLOW
-========================================= */
-
-.comments-section::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 180px;
-
-    height: 180px;
-
-    top: -90px;
-
-    left: -70px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(
-            210,
-            174,
-            222,
-            0.28
-        );
-
-    filter:
-        blur(25px);
-
-    pointer-events: none;
-}
-
-
-.comments-section::after {
-
-    content: "♥";
-
-    position: absolute;
-
-    top: 12px;
-
-    right: 20px;
-
-    color:
-        rgba(
-            165,
-            139,
-            181,
-            0.25
-        );
-
-    font-size: 30px;
-
-    animation:
-        luxuryHeart
-        3s ease-in-out infinite;
-}
-
-
-@keyframes luxuryHeart {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0)
-            rotate(-8deg);
-
-        opacity: 0.35;
+        margin-top: 25px;
     }
 
 
-    50% {
+    .details p {
 
-        transform:
-            translateY(-7px)
-            rotate(8deg);
+        margin-bottom: 15px;
 
-        opacity: 0.8;
+        letter-spacing: 2px;
+
+        color: #91779e;
+
+        font-family:
+            Georgia,
+            serif;
+
+        font-size: 15px;
+
+        line-height: 1.2;
     }
 
-}
 
+    /* =========================================
+    DRESS CODE
+    ========================================= */
 
-/* =========================================
-   ✨ MESSAGE TITLE
-========================================= */
+    .dress-code {
 
-.comments-title {
+        display: flex;
 
-    position: relative;
+        align-items: center;
 
-    color: #80618f;
+        font-family: sans-serif;
 
-    font-family:
-        Georgia,
-        serif;
+        font-size: 18px;
 
-    font-size: 28px;
+        color: #a58bb5;
 
-    font-weight: normal;
+        margin: 20px 0;
+    }
 
-    letter-spacing: 2px;
 
-    margin-bottom: 10px;
+    .dress-code div {
 
-    text-shadow:
-        0 2px 8px
-        rgba(
-            128,
-            97,
-            143,
-            0.18
-        );
-}
+        flex: 1;
 
+        height: 2px;
 
-/* =========================================
-   TITLE DECORATION
-========================================= */
+        background-color: #a58bb5;
+    }
 
-.comments-title::after {
 
-    content: "";
+    .dress-code span {
 
-    display: block;
+        padding: 0 15px;
 
-    width: 55px;
+        font-family:
+            Georgia,
+            serif;
 
-    height: 1px;
+        font-size: 20px;
 
-    margin: 12px auto 0;
+        line-height: 1.8;
+    }
 
-    background:
-        linear-gradient(
-            to right,
-            transparent,
-            #a58bb5,
-            transparent
-        );
-}
 
+    /* =========================================
+    COLOR PALETTE
+    ========================================= */
 
-/* =========================================
-   ✨ SUBTITLE
-========================================= */
+    .palette-title {
 
-.comments-subtitle {
+        letter-spacing: 5px;
 
-    color: #91779e;
+        margin-top: 20px;
 
-    font-family:
-        Georgia,
-        serif;
+        margin-bottom: 15px;
+    }
 
-    font-size: 14px;
 
-    font-style: italic;
+    .palette-image {
 
-    letter-spacing: 1px;
+        max-width: 100%;
 
-    line-height: 1.7;
+        height: auto;
 
-    margin-bottom: 25px;
-}
+        display: block;
 
+        margin: 0 auto;
+    }
 
-/* =========================================
-   ✨ MESSAGE FORM
-========================================= */
 
-.comment-form {
+    /* =========================================
+    ✨ LUXURY WEDDING MESSAGE SECTION
+    ========================================= */
 
-    position: relative;
+    .comments-section {
 
-    display: flex;
+        position: relative;
 
-    flex-direction: column;
+        margin-top: 45px;
 
-    gap: 14px;
-}
+        padding: 38px 25px 30px;
 
+        border-radius: 25px;
 
-/* =========================================
-   ✨ NAME + MESSAGE INPUTS
-========================================= */
+        background:
+            linear-gradient(
+                145deg,
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.65
+                ),
+                rgba(
+                    238,
+                    219,
+                    244,
+                    0.55
+                )
+            );
 
-.comment-form input,
-.comment-form textarea {
-
-    width: 100%;
-
-    padding: 15px 18px;
-
-    border:
-        1px solid
-        rgba(
-            155,
-            126,
-            170,
-            0.35
-        );
-
-    border-radius: 14px;
-
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.55
-        );
-
-    color: #80618f;
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 14px;
-
-    outline: none;
-
-    box-shadow:
-        inset 0 2px 8px
-        rgba(
-            100,
-            70,
-            110,
-            0.05
-        );
-
-    transition:
-        all 0.4s ease;
-}
-
-
-/* =========================================
-   ✨ PLACEHOLDER
-========================================= */
-
-.comment-form input::placeholder,
-.comment-form textarea::placeholder {
-
-    color: #a58bb5;
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-style: italic;
-
-    transition: 0.3s;
-}
-
-
-/* =========================================
-   ✨ INPUT HOVER
-========================================= */
-
-.comment-form input:hover,
-.comment-form textarea:hover {
-
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.75
-        );
-
-    border-color:
-        rgba(
-            155,
-            113,
-            158,
-            0.55
-        );
-
-    transform:
-        translateY(-1px);
-}
-
-
-/* =========================================
-   ✨ INPUT FOCUS
-========================================= */
-
-.comment-form input:focus,
-.comment-form textarea:focus {
-
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.85
-        );
-
-    border-color: #9b719e;
-
-    box-shadow:
-
-        0 0 0 3px
-        rgba(
-            155,
-            113,
-            158,
-            0.10
-        ),
-
-        0 8px 20px
-        rgba(
-            100,
-            70,
-            110,
-            0.10
-        );
-
-    transform:
-        translateY(-2px);
-}
-
-
-.comment-form input:focus::placeholder,
-.comment-form textarea:focus::placeholder {
-
-    opacity: 0.4;
-}
-
-
-/* =========================================
-   ✨ MESSAGE BOX
-========================================= */
-
-.comment-form textarea {
-
-    min-height: 125px;
-
-    resize: vertical;
-}
-
-
-/* =========================================
-   ✨ LUXURY POST BUTTON
-========================================= */
-
-.comment-form button {
-
-    position: relative;
-
-    overflow: hidden;
-
-    padding: 14px 25px;
-
-    border:
-        1px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.5
-        );
-
-    border-radius: 30px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #b28dbb,
-            #8f6599,
-            #b28dbb
-        );
-
-    background-size: 200% 200%;
-
-    color: white;
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 12px;
-
-    letter-spacing: 3px;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 8px 20px
-        rgba(
-            128,
-            97,
-            143,
-            0.25
-        );
-
-    transition:
-        all 0.4s ease;
-
-    animation:
-        buttonGlow
-        3s ease-in-out infinite;
-}
-
-
-/* =========================================
-   ✨ BUTTON SHINE
-========================================= */
-
-.comment-form button::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: -100%;
-
-    width: 70%;
-
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
+        border:
+            1px solid
             rgba(
-                255,
-                255,
-                255,
+                165,
+                139,
+                181,
                 0.45
+            );
+
+        box-shadow:
+
+            0 20px 45px
+            rgba(
+                90,
+                55,
+                105,
+                0.16
             ),
-            transparent
-        );
 
-    transform:
-        skewX(-20deg);
+            inset 0 1px 0
+            rgba(
+                255,
+                255,
+                255,
+                0.8
+            );
 
-    transition:
-        0.6s;
-}
+        backdrop-filter:
+            blur(12px);
 
+        -webkit-backdrop-filter:
+            blur(12px);
 
-.comment-form button:hover::before {
-
-    left: 130%;
-}
-
-
-.comment-form button:hover {
-
-    background-position:
-        right center;
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 12px 28px
-        rgba(
-            128,
-            97,
-            143,
-            0.35
-        );
-}
+        overflow: hidden;
+    }
 
 
-.comment-form button:active {
+    /* =========================================
+    ✨ DECORATIVE GLOW
+    ========================================= */
 
-    transform:
-        scale(0.97);
-}
+    .comments-section::before {
+
+        content: "";
+
+        position: absolute;
+
+        width: 180px;
+
+        height: 180px;
+
+        top: -90px;
+
+        left: -70px;
+
+        border-radius: 50%;
+
+        background:
+            rgba(
+                210,
+                174,
+                222,
+                0.28
+            );
+
+        filter:
+            blur(25px);
+
+        pointer-events: none;
+    }
 
 
-/* =========================================
-   ✨ BUTTON GLOW
-========================================= */
+    .comments-section::after {
 
-@keyframes buttonGlow {
+        content: "♥";
 
-    0%,
-    100% {
+        position: absolute;
+
+        top: 12px;
+
+        right: 20px;
+
+        color:
+            rgba(
+                165,
+                139,
+                181,
+                0.25
+            );
+
+        font-size: 30px;
+
+        animation:
+            luxuryHeart
+            3s ease-in-out infinite;
+    }
+
+
+    @keyframes luxuryHeart {
+
+        0%,
+        100% {
+
+            transform:
+                translateY(0)
+                rotate(-8deg);
+
+            opacity: 0.35;
+        }
+
+
+        50% {
+
+            transform:
+                translateY(-7px)
+                rotate(8deg);
+
+            opacity: 0.8;
+        }
+
+    }
+
+
+    /* =========================================
+    ✨ MESSAGE TITLE
+    ========================================= */
+
+    .comments-title {
+
+        position: relative;
+
+        color: #80618f;
+
+        font-family:
+            Georgia,
+            serif;
+
+        font-size: 28px;
+
+        font-weight: normal;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 10px;
+
+        text-shadow:
+            0 2px 8px
+            rgba(
+                128,
+                97,
+                143,
+                0.18
+            );
+    }
+
+
+    /* =========================================
+    TITLE DECORATION
+    ========================================= */
+
+    .comments-title::after {
+
+        content: "";
+
+        display: block;
+
+        width: 55px;
+
+        height: 1px;
+
+        margin: 12px auto 0;
+
+        background:
+            linear-gradient(
+                to right,
+                transparent,
+                #a58bb5,
+                transparent
+            );
+    }
+
+
+    /* =========================================
+    ✨ SUBTITLE
+    ========================================= */
+
+    .comments-subtitle {
+
+        color: #91779e;
+
+        font-family:
+            Georgia,
+            serif;
+
+        font-size: 14px;
+
+        font-style: italic;
+
+        letter-spacing: 1px;
+
+        line-height: 1.7;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* =========================================
+    ✨ MESSAGE FORM
+    ========================================= */
+
+    .comment-form {
+
+        position: relative;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+
+    /* =========================================
+    ✨ NAME + MESSAGE INPUTS
+    ========================================= */
+
+    .comment-form input,
+    .comment-form textarea {
+
+        width: 100%;
+
+        padding: 15px 18px;
+
+        border:
+            1px solid
+            rgba(
+                155,
+                126,
+                170,
+                0.35
+            );
+
+        border-radius: 14px;
+
+        background:
+            rgba(
+                255,
+                255,
+                255,
+                0.55
+            );
+
+        color: #80618f;
+
+        font-family:
+            Georgia,
+            serif;
+
+        font-size: 14px;
+
+        outline: none;
+
+        box-shadow:
+            inset 0 2px 8px
+            rgba(
+                100,
+                70,
+                110,
+                0.05
+            );
+
+        transition:
+            all 0.4s ease;
+    }
+
+
+    /* =========================================
+    ✨ PLACEHOLDER
+    ========================================= */
+
+    .comment-form input::placeholder,
+    .comment-form textarea::placeholder {
+
+        color: #a58bb5;
+
+        font-family:
+            Georgia,
+            serif;
+
+        font-style: italic;
+
+        transition: 0.3s;
+    }
+
+
+    /* =========================================
+    ✨ INPUT HOVER
+    ========================================= */
+
+    .comment-form input:hover,
+    .comment-form textarea:hover {
+
+        background:
+            rgba(
+                255,
+                255,
+                255,
+                0.75
+            );
+
+        border-color:
+            rgba(
+                155,
+                113,
+                158,
+                0.55
+            );
+
+        transform:
+            translateY(-1px);
+    }
+
+
+    /* =========================================
+    ✨ INPUT FOCUS
+    ========================================= */
+
+    .comment-form input:focus,
+    .comment-form textarea:focus {
+
+        background:
+            rgba(
+                255,
+                255,
+                255,
+                0.85
+            );
+
+        border-color: #9b719e;
+
+        box-shadow:
+
+            0 0 0 3px
+            rgba(
+                155,
+                113,
+                158,
+                0.10
+            ),
+
+            0 8px 20px
+            rgba(
+                100,
+                70,
+                110,
+                0.10
+            );
+
+        transform:
+            translateY(-2px);
+    }
+
+
+    .comment-form input:focus::placeholder,
+    .comment-form textarea:focus::placeholder {
+
+        opacity: 0.4;
+    }
+
+
+    /* =========================================
+    ✨ MESSAGE BOX
+    ========================================= */
+
+    .comment-form textarea {
+
+        min-height: 125px;
+
+        resize: vertical;
+    }
+
+
+    /* =========================================
+    ✨ LUXURY POST BUTTON
+    ========================================= */
+
+    .comment-form button {
+
+        position: relative;
+
+        overflow: hidden;
+
+        padding: 14px 25px;
+
+        border:
+            1px solid
+            rgba(
+                255,
+                255,
+                255,
+                0.5
+            );
+
+        border-radius: 30px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #b28dbb,
+                #8f6599,
+                #b28dbb
+            );
+
+        background-size: 200% 200%;
+
+        color: white;
+
+        font-family:
+            Georgia,
+            serif;
+
+        font-size: 12px;
+
+        letter-spacing: 3px;
+
+        cursor: pointer;
 
         box-shadow:
             0 8px 20px
@@ -1340,428 +1218,617 @@ h1 span {
                 128,
                 97,
                 143,
-                0.20
+                0.25
             );
+
+        transition:
+            all 0.4s ease;
+
+        animation:
+            buttonGlow
+            3s ease-in-out infinite;
     }
 
 
-    50% {
+    /* =========================================
+    ✨ BUTTON SHINE
+    ========================================= */
+
+    .comment-form button::before {
+
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+
+        left: -100%;
+
+        width: 70%;
+
+        height: 100%;
+
+        background:
+            linear-gradient(
+                90deg,
+                transparent,
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.45
+                ),
+                transparent
+            );
+
+        transform:
+            skewX(-20deg);
+
+        transition:
+            0.6s;
+    }
+
+
+    .comment-form button:hover::before {
+
+        left: 130%;
+    }
+
+
+    .comment-form button:hover {
+
+        background-position:
+            right center;
+
+        transform:
+            translateY(-3px);
 
         box-shadow:
-            0 8px 28px
+            0 12px 28px
             rgba(
                 128,
                 97,
                 143,
-                0.40
+                0.35
             );
     }
 
-}
 
-
-/* =========================================
-   ✨ MESSAGES TITLE
-========================================= */
-
-.comments-list-section {
-
-    margin-top: 38px;
-
-    padding-top: 25px;
-
-    border-top:
-        1px solid
-        rgba(
-            128,
-            97,
-            143,
-            0.15
-        );
-}
-
-
-.comments-list-section h3 {
-
-    color: #80618f;
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 21px;
-
-    font-weight: normal;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 20px;
-}
-
-
-/* =========================================
-   ✨ INDIVIDUAL MESSAGE CARD
-========================================= */
-
-.comment-box {
-
-    position: relative;
-
-    text-align: left;
-
-    padding:
-        20px 20px 17px;
-
-    margin-bottom: 17px;
-
-    border-radius: 16px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(
-                255,
-                255,
-                255,
-                0.70
-            ),
-            rgba(
-                245,
-                232,
-                248,
-                0.60
-            )
-        );
-
-    border:
-        1px solid
-        rgba(
-            165,
-            139,
-            181,
-            0.25
-        );
-
-    border-left:
-        3px solid
-        #a58bb5;
-
-    box-shadow:
-        0 8px 20px
-        rgba(
-            100,
-            70,
-            110,
-            0.09
-        );
-
-    backdrop-filter:
-        blur(8px);
-
-    -webkit-backdrop-filter:
-        blur(8px);
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-
-    animation:
-        messageAppear
-        0.6s ease;
-}
-
-
-/* =========================================
-   ✨ MESSAGE CARD HOVER
-========================================= */
-
-.comment-box:hover {
-
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-        0 14px 28px
-        rgba(
-            100,
-            70,
-            110,
-            0.15
-        );
-}
-
-
-/* =========================================
-   ✨ LITTLE HEART
-========================================= */
-
-.comment-box::after {
-
-    content: "♥";
-
-    position: absolute;
-
-    top: 13px;
-
-    right: 17px;
-
-    font-size: 15px;
-
-    color:
-        rgba(
-            165,
-            139,
-            181,
-            0.45
-        );
-}
-
-
-/* =========================================
-   ✨ GUEST NAME
-========================================= */
-
-.comment-box h4 {
-
-    color: #80618f;
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 17px;
-
-    font-weight: normal;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 9px;
-}
-
-
-/* =========================================
-   ✨ GUEST MESSAGE
-========================================= */
-
-.comment-box p {
-
-    color: #91779e;
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-
-    letter-spacing: 0;
-
-    margin-bottom: 10px;
-
-    word-wrap: break-word;
-}
-
-
-/* =========================================
-   ✨ DATE
-========================================= */
-
-.comment-box small {
-
-    color: #b09db8;
-
-    font-family:
-        Arial,
-        sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing: 0.5px;
-}
-
-
-/* =========================================
-   ✨ MESSAGE APPEAR ANIMATION
-========================================= */
-
-@keyframes messageAppear {
-
-    from {
-
-        opacity: 0;
+    .comment-form button:active {
 
         transform:
-            translateY(15px)
-            scale(0.98);
+            scale(0.97);
     }
 
 
-    to {
+    /* =========================================
+    ✨ BUTTON GLOW
+    ========================================= */
 
-        opacity: 1;
+    @keyframes buttonGlow {
 
-        transform:
-            translateY(0)
-            scale(1);
-    }
+        0%,
+        100% {
 
-}
-
-
-/* =========================================
-   ✨ MOBILE
-========================================= */
-
-@media (max-width: 500px) {
-
-
-    .invitation {
-
-        padding:
-            25px 12px;
-    }
+            box-shadow:
+                0 8px 20px
+                rgba(
+                    128,
+                    97,
+                    143,
+                    0.20
+                );
+        }
 
 
-    .content {
+        50% {
 
-        padding:
-            40px 20px;
-    }
+            box-shadow:
+                0 8px 28px
+                rgba(
+                    128,
+                    97,
+                    143,
+                    0.40
+                );
+        }
 
-
-    h1 {
-
-        font-size: 32px;
     }
 
 
-    h1 span {
+    /* =========================================
+    ✨ MESSAGES TITLE
+    ========================================= */
 
-        font-size: 20px;
+    .comments-list-section {
+
+        margin-top: 38px;
+
+        padding-top: 25px;
+
+        border-top:
+            1px solid
+            rgba(
+                128,
+                97,
+                143,
+                0.15
+            );
     }
 
 
-    .date {
+    .comments-list-section h3 {
 
-        gap: 15px;
-    }
+        color: #80618f;
 
+        font-family:
+            Georgia,
+            serif;
 
-    .date strong {
+        font-size: 21px;
 
-        font-size: 45px;
-    }
-
-
-    .venue-top {
-
-        font-size: 11px;
-    }
-
-
-    .venue-bottom {
-
-        font-size: 9px;
-
-        letter-spacing: 1px;
-    }
-
-
-    .venue-line {
-
-        height: 30px;
-    }
-
-
-    .time {
-
-        font-size: 45px;
-    }
-
-
-    .dress-code span {
-
-        font-size: 15px;
-
-        padding:
-            0 8px;
-    }
-
-
-    .petal {
-
-        max-width: 35px;
-    }
-
-
-    /* ================================
-       MOBILE COMMENTS
-    ================================= */
-
-    .comments-section {
-
-        margin-top: 35px;
-
-        padding:
-            30px 17px 25px;
-
-        border-radius: 22px;
-    }
-
-
-    .comments-title {
-
-        font-size: 23px;
-    }
-
-
-    .comments-subtitle {
-
-        font-size: 12px;
-    }
-
-
-    .comment-form input,
-    .comment-form textarea {
-
-        padding:
-            14px 15px;
-    }
-
-
-    .comment-form textarea {
-
-        min-height: 115px;
-    }
-
-
-    .comment-form button {
-
-        padding:
-            13px 18px;
-
-        font-size: 10px;
+        font-weight: normal;
 
         letter-spacing: 2px;
+
+        margin-bottom: 20px;
     }
 
+
+    /* =========================================
+    ✨ INDIVIDUAL MESSAGE CARD
+    ========================================= */
 
     .comment-box {
 
-        padding: 17px;
+        position: relative;
+
+        text-align: left;
+
+        padding:
+            20px 20px 17px;
+
+        margin-bottom: 17px;
+
+        border-radius: 16px;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.70
+                ),
+                rgba(
+                    245,
+                    232,
+                    248,
+                    0.60
+                )
+            );
+
+        border:
+            1px solid
+            rgba(
+                165,
+                139,
+                181,
+                0.25
+            );
+
+        border-left:
+            3px solid
+            #a58bb5;
+
+        box-shadow:
+            0 8px 20px
+            rgba(
+                100,
+                70,
+                110,
+                0.09
+            );
+
+        backdrop-filter:
+            blur(8px);
+
+        -webkit-backdrop-filter:
+            blur(8px);
+
+        transition:
+            transform 0.35s ease,
+            box-shadow 0.35s ease;
+
+        animation:
+            messageAppear
+            0.6s ease;
     }
 
+
+    /* =========================================
+    ✨ MESSAGE CARD HOVER
+    ========================================= */
+
+    .comment-box:hover {
+
+        transform:
+            translateY(-4px);
+
+        box-shadow:
+            0 14px 28px
+            rgba(
+                100,
+                70,
+                110,
+                0.15
+            );
+    }
+
+
+    /* =========================================
+    ✨ LITTLE HEART
+    ========================================= */
+
+    .comment-box::after {
+
+        content: "♥";
+
+        position: absolute;
+
+        top: 13px;
+
+        right: 17px;
+
+        font-size: 15px;
+
+        color:
+            rgba(
+                165,
+                139,
+                181,
+                0.45
+            );
+    }
+
+
+    /* =========================================
+    ✨ GUEST NAME
+    ========================================= */
 
     .comment-box h4 {
 
-        font-size: 16px;
+        color: #80618f;
+
+        font-family:
+            Georgia,
+            serif;
+
+        font-size: 17px;
+
+        font-weight: normal;
+
+        letter-spacing: 1px;
+
+        margin-bottom: 9px;
     }
 
+
+    /* =========================================
+    ✨ GUEST MESSAGE
+    ========================================= */
 
     .comment-box p {
 
-        font-size: 13px;
+        color: #91779e;
+
+        font-family:
+            Georgia,
+            serif;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+        letter-spacing: 0;
+
+        margin-bottom: 10px;
+
+        word-wrap: break-word;
     }
 
-}
+
+    /* =========================================
+    ✨ DATE
+    ========================================= */
+
+    .comment-box small {
+
+        color: #b09db8;
+
+        font-family:
+            Arial,
+            sans-serif;
+
+        font-size: 10px;
+
+        letter-spacing: 0.5px;
+    }
+
+
+    /* =========================================
+    ✨ MESSAGE APPEAR ANIMATION
+    ========================================= */
+
+    @keyframes messageAppear {
+
+        from {
+
+            opacity: 0;
+
+            transform:
+                translateY(15px)
+                scale(0.98);
+        }
+
+
+        to {
+
+            opacity: 1;
+
+            transform:
+                translateY(0)
+                scale(1);
+        }
+
+    }
+
+
+    /* =========================================
+    ✨ MOBILE
+    ========================================= */
+
+    @media (max-width: 500px) {
+
+
+        .invitation {
+
+            padding:
+                25px 12px;
+        }
+
+
+        .content {
+
+            padding:
+                40px 20px;
+        }
+
+
+        h1 {
+
+            font-size: 32px;
+        }
+
+
+        h1 span {
+
+            font-size: 20px;
+        }
+
+
+        .date {
+
+            gap: 15px;
+        }
+
+
+        .date strong {
+
+            font-size: 45px;
+        }
+
+
+        .venue-top {
+
+            font-size: 11px;
+        }
+
+
+        .venue-bottom {
+
+            font-size: 9px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .venue-line {
+
+            height: 30px;
+        }
+
+
+        .time {
+
+            font-size: 45px;
+        }
+
+
+        .dress-code span {
+
+            font-size: 15px;
+
+            padding:
+                0 8px;
+        }
+
+
+        .petal {
+
+            max-width: 35px;
+        }
+
+
+        /* ================================
+        MOBILE COMMENTS
+        ================================= */
+
+        .comments-section {
+
+            margin-top: 35px;
+
+            padding:
+                30px 17px 25px;
+
+            border-radius: 22px;
+        }
+
+
+        .comments-title {
+
+            font-size: 23px;
+        }
+
+
+        .comments-subtitle {
+
+            font-size: 12px;
+        }
+
+
+        .comment-form input,
+        .comment-form textarea {
+
+            padding:
+                14px 15px;
+        }
+
+
+        .comment-form textarea {
+
+            min-height: 115px;
+        }
+
+
+        .comment-form button {
+
+            padding:
+                13px 18px;
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .comment-box {
+
+            padding: 17px;
+        }
+
+
+        .comment-box h4 {
+
+            font-size: 16px;
+        }
+
+
+        .comment-box p {
+
+            font-size: 13px;
+        }
+
+    }
+    .wedding-party {
+        width: 100%;
+        max-width: 900px;
+        margin: 60px auto 40px;
+        text-align: center;
+    }
+
+
+    /* Individual sections */
+
+    .party-section {
+        margin-bottom: 55px;
+    }
+
+
+    /* Main section titles */
+
+    .party-section h2 {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 26px;
+        letter-spacing: 3px;
+        margin-bottom: 18px;
+        text-transform: upper case;
+    }
+
+
+    /* Names */
+
+    .party-names p,
+    .sponsors-list p {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 17px;
+        line-height: 1.8;
+        margin: 6px 0;
+    }
+
+
+    /* Subtitle such as:
+    (Candle, Veil and Cord)
+    */
+
+    .party-subtitle {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 14px;
+        font-style: italic;
+        margin-top: -8px;
+        margin-bottom: 20px;
+    }
+
+
+    /* =========================================
+    ENTOURAGE TWO-COLUMN LAYOUT
+    ========================================== */
+
+    .entourage-section {
+        width: 100%;
+    }
+
+
+    .entourage-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin: 35px auto;
+        width: 100%;
+    }
+
+
+    .entourage-column {
+        text-align: center;
+        padding: 10px;
+    }
+
+
+    .entourage-column h3 {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 18px;
+        border-bottom: 1px solid rgba(120, 90, 120, 0.4);
+        padding-bottom: 10px;
+    }
+
+
+    .entourage-column p {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 16px;
+        line-height: 1.7;
+        margin: 8px 0;
+    }
