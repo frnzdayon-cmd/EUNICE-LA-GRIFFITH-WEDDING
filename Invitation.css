@@ -756,7 +756,7 @@ h1 span {
 
     color: #2d143c;
 
-    
+    margin: 20px 0;
 }
 
 
@@ -764,7 +764,7 @@ h1 span {
 
     flex: 1;
 
-    height: 1px;
+    height: 2px;
 
     background-color: #a58bb5;
 }
@@ -2049,3 +2049,4 @@ h1 span {
     }
 
 }
+
