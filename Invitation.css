@@ -592,7 +592,7 @@ h1 span {
     letter-spacing: 1.5px;
 
     color: #49245c;
-}
+}   
 
 
 /* =========================================
@@ -754,7 +754,7 @@ h1 span {
 
     font-size: 18px;
 
-    color: #a58bb5;
+    color: #2d143c;
 
     margin: 20px 0;
 }
@@ -762,9 +762,7 @@ h1 span {
 
 .dress-code div {
 
-    flex: 1;
-
-    height: 2px;
+   margin-left: 125px;
 
     background-color: #a58bb5;
 }
@@ -792,9 +790,9 @@ h1 span {
 
     letter-spacing: 5px;
 
-    margin-top: 20px;
+    margin-top: 10px;
 
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 
@@ -2049,5 +2047,3 @@ h1 span {
     }
 
 }
-
-
