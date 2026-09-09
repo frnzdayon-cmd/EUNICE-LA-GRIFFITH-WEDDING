@@ -1,26 +1,29 @@
-    <!DOCTYPE html>
 
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
+<head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Wedding Invitation</title>
 
     <link rel="stylesheet" href="style2.css">
 
-    </head>
+</head>
 
 
-    <body>
+<body>
 
 
     <!-- =========================================
-        DECORATIVE BACKGROUND
-    ========================================== -->
+         DECORATIVE BACKGROUND
+    ========================================= -->
 
     <div class="background-glow glow-one"></div>
 
@@ -28,8 +31,8 @@
 
 
     <!-- =========================================
-        FLOATING HEARTS
-    ========================================== -->
+         FLOATING HEARTS
+    ========================================= -->
 
     <div class="floating-hearts">
 
@@ -44,8 +47,8 @@
 
 
     <!-- =========================================
-        WEDDING INVITATION ENVELOPE
-    ========================================== -->
+         WEDDING INVITATION ENVELOPE
+    ========================================= -->
 
     <div
         class="envelope-container"
@@ -54,80 +57,60 @@
 
 
         <!-- =====================================
-            DECORATIVE OUTER FRAME
+             DECORATIVE FRAME
         ====================================== -->
 
         <div class="envelope-frame">
 
             <span class="corner corner-top-left"></span>
+
             <span class="corner corner-top-right"></span>
+
             <span class="corner corner-bottom-left"></span>
+
             <span class="corner corner-bottom-right"></span>
 
         </div>
 
 
         <!-- =====================================
-            ENVELOPE
+             ENVELOPE
         ====================================== -->
 
         <div class="envelope">
 
 
             <!-- =================================
-                LETTER
+                 INVITATION IMAGE
             ================================== -->
 
             <div class="letter">
 
-                <div class="letter-decoration">
-                    ✦
-                </div>
-
-                <p>
-                    WEDDING INVITATION
-                </p>
-
-                <h1>
-                    EUNICE
-                </h1>
-
-                <span class="letter-and">
-                    &
-                </span>
-
-                <h2>
-                    LA GRIFFITH
-                </h2>
-
-                <div class="letter-line"></div>
-
-                <small>
-                    OCTOBER 02 · 2026
-                </small>
+                <img
+                    src="La and Eunice.jpg"
+                    alt="La and Eunice Wedding Invitation"
+                    class="envelope-image"
+                >
 
             </div>
 
 
             <!-- =================================
-                ENVELOPE FRONT
+                 ENVELOPE FRONT
             ================================== -->
 
             <div class="front"></div>
 
 
             <!-- =================================
-                ENVELOPE FLAP
+                 ENVELOPE FLAP
             ================================== -->
 
             <div class="flap"></div>
 
 
             <!-- =================================
-                CENTER STAMP
-                
-                Make sure the image filename
-                is exactly: Stamp.png
+                 CENTER STAMP
             ================================== -->
 
             <div class="center-stamp">
@@ -141,7 +124,7 @@
 
 
             <!-- =================================
-                TAP SIGN
+                 TAP SIGN
             ================================== -->
 
             <div class="tap-sign">
@@ -163,67 +146,68 @@
 
 
     <!-- =========================================
-        JAVASCRIPT
-    ========================================== -->
+         JAVASCRIPT
+    ========================================= -->
 
     <script>
 
-    let envelopeOpened = false;
+        let envelopeOpened = false;
 
 
-    function openEnvelope() {
+        function openEnvelope() {
 
-        if (envelopeOpened) {
-            return;
+            /*
+             * Prevent the envelope from
+             * opening more than once.
+             */
+
+            if (envelopeOpened) {
+
+                return;
+
+            }
+
+
+            envelopeOpened = true;
+
+
+            /*
+             * Tell Invitation.html
+             * to play the wedding music.
+             */
+
+            sessionStorage.setItem(
+                "playWeddingMusic",
+                "true"
+            );
+
+
+            /*
+             * Open the envelope.
+             */
+
+            document
+                .querySelector(".envelope-container")
+                .classList.add("open");
+
+
+            /*
+             * Wait for the animation
+             * before going to Invitation.html.
+             */
+
+            setTimeout(function() {
+
+                window.location.href =
+                    "Invitation.html";
+
+            }, 1800);
+
         }
-
-        envelopeOpened = true;
-
-
-        const envelope =
-            document.querySelector(".envelope");
-
-
-        /*
-        * Tell the invitation page
-        * that the user opened the envelope.
-        */
-
-        sessionStorage.setItem(
-            "playWeddingMusic",
-            "true"
-        );
-
-
-        /*
-        * Open envelope animation
-        */
-
-        document
-            .querySelector(".envelope-container")
-            .classList.add("open");
-
-
-        /*
-        * IMPORTANT:
-        * This MUST match the filename exactly.
-        *   
-        * Invitation.html
-        * NOT
-        * invitation.html
-        */
-
-        setTimeout(function() {
-
-            window.location.href = "Invitation.html";
-
-        }, 1200);
-
-    }
 
     </script>
 
 
-    </body>
+</body>
 
-    </html>
+</html>
