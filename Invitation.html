@@ -1,1398 +1,2891 @@
-<!DOCTYPE html>
+/* =========================================
+RESET
+========================================= */
 
-<html lang="en">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
 
-<head>
+/* =========================================
+BODY
+========================================= */
 
-<meta charset="UTF-8">
+body {
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
 
-<title>Eunice & La Griffith</title>
+min-height: 100vh;
 
-<link rel="stylesheet" href="Invitation.css">
+background:
+    linear-gradient(
+        135deg,
+        #eadff0,
+        #f8eef8,
+        #e1d0e8
+    );
 
+font-family:
+    'Franklin Gothic Medium',
+    'Arial Narrow',
+    Arial,
+    sans-serif;
 
-</head>
+color: #80618f;
 
-<body>
 
-<!-- =========================================
-     BACKGROUND MUSIC
-========================================== -->
+}
 
-<audio
-id="weddingMusic"
-loop
-preload="auto"
+/* =========================================
+FALLING PETALS
+========================================= */
 
->
+.petal-container {
 
 
-<source
-    src="I Won't Give Up.mp3"
-    type="audio/mpeg"
->
+position: fixed;
 
+top: 0;
+left: 0;
 
-</audio>
+width: 100%;
+height: 100vh;
 
-<!-- =========================================
-     FALLING PETALS
-========================================== -->
+pointer-events: none;
 
-<div class="petal-container">
+overflow: hidden;
 
+z-index: 100;
 
-<img src="FlowersPurple.png" class="petal petal-1" alt="">
-<img src="FlowersPurple.png" class="petal petal-2" alt="">
-<img src="FlowersPurple.png" class="petal petal-3" alt="">
-<img src="FlowersPurple.png" class="petal petal-4" alt="">
-<img src="FlowersPurple.png" class="petal petal-5" alt="">
-<img src="FlowersPurple.png" class="petal petal-6" alt="">
-<img src="FlowersPurple.png" class="petal petal-7" alt="">
-<img src="FlowersPurple.png" class="petal petal-8" alt="">
-<img src="FlowersPurple.png" class="petal petal-9" alt="">
-<img src="FlowersPurple.png" class="petal petal-10" alt="">
-<img src="FlowersPurple.png" class="petal petal-11" alt="">
-<img src="FlowersPurple.png" class="petal petal-12" alt="">
-<img src="FlowersPurple.png" class="petal petal-13" alt="">
-<img src="FlowersPurple.png" class="petal petal-14" alt="">
-<img src="FlowersPurple.png" class="petal petal-15" alt="">
-<img src="FlowersPurple.png" class="petal petal-16" alt="">
 
-</div>
+}
 
-<!-- =========================================
-     INVITATION
-========================================== -->
+.petal {
 
-<main class="invitation">
 
-<div class="content">
+position: absolute;
 
+top: -100px;
 
-<p class="small-title">
-    TOGETHER WITH THEIR FAMILIES
-</p>
+width: 45px;
+height: auto;
 
+opacity: 0;
 
-<h1>
+object-fit: contain;
 
-    LA GRIFFITH
+filter:
+    drop-shadow(
+        0 5px 6px
+        rgba(
+            80,
+            40,
+            90,
+            0.25
+        )
+    );
+
+animation:
+    petalFall
+    linear
+    infinite;
 
-    <span>&</span>
 
-    EUNICE
+}
 
-</h1>
+/* =========================================
+PETAL POSITIONS
+========================================= */
 
+.petal-1 {
+left: 5%;
+width: 35px;
+animation-duration: 9s;
+animation-delay: 0s;
+}
+
+.petal-2 {
+left: 14%;
+width: 50px;
+animation-duration: 12s;
+animation-delay: 2s;
+}
+
+.petal-3 {
+left: 25%;
+width: 30px;
+animation-duration: 8s;
+animation-delay: 4s;
+}
+
+.petal-4 {
+left: 35%;
+width: 45px;
+animation-duration: 11s;
+animation-delay: 1s;
+}
+
+.petal-5 {
+left: 45%;
+width: 28px;
+animation-duration: 10s;
+animation-delay: 5s;
+}
+
+.petal-6 {
+left: 55%;
+width: 48px;
+animation-duration: 13s;
+animation-delay: 3s;
+}
+
+.petal-7 {
+left: 65%;
+width: 32px;
+animation-duration: 9s;
+animation-delay: 6s;
+}
+
+.petal-8 {
+left: 73%;
+width: 55px;
+animation-duration: 12s;
+animation-delay: 1.5s;
+}
+
+.petal-9 {
+left: 82%;
+width: 35px;
+animation-duration: 10s;
+animation-delay: 4.5s;
+}
+
+.petal-10 {
+left: 90%;
+width: 45px;
+animation-duration: 14s;
+animation-delay: 7s;
+}
+
+.petal-11 {
+left: 18%;
+width: 25px;
+animation-duration: 7s;
+animation-delay: 8s;
+}
+
+.petal-12 {
+left: 60%;
+width: 25px;
+animation-duration: 8s;
+animation-delay: 9s;
+}
+
+/* =========================================
+PETAL ANIMATION
+========================================= */
+
+@keyframes petalFall {
+
+
+0% {
+    top: -100px;
+    opacity: 0;
+
+    transform:
+        translateX(0)
+        rotate(0deg)
+        scale(0.7);
+}
+
+10% {
+    opacity: 0.9;
+}
+
+25% {
+    transform:
+        translateX(70px)
+        rotate(90deg)
+        scale(0.9);
+}
+
+50% {
+    transform:
+        translateX(-50px)
+        rotate(180deg)
+        scale(1);
+}
+
+75% {
+    transform:
+        translateX(80px)
+        rotate(270deg)
+        scale(0.85);
+}
+
+90% {
+    opacity: 0.8;
+}
+
+100% {
+    top: 110vh;
+    opacity: 0;
+
+    transform:
+        translateX(-40px)
+        rotate(360deg)
+        scale(0.7);
+}
+
+
+}
+
+/* =========================================
+INVITATION
+========================================= */
+
+.invitation {
+
+
+min-height: 100vh;
+
+display: flex;
 
-<p class="subtitle">
-    REQUEST THE HONOUR OF YOUR PRESENCE
-</p>
+justify-content: center;
 
+align-items: center;
 
-<p class="message">
+padding: 40px 20px;
 
-    AS THEY BEGIN THEIR JOURNEY
 
-    <br>
+}
 
-    TOGETHER AS ONE
+/* =========================================
+CONTENT
+========================================= */
 
-</p>
+.content {
+position: relative;
 
+width: 100%;
 
-<!-- =========================================
-     DIVIDER
-========================================== -->
+max-width: 600px;
 
-<div class="divider">
-    ♥
-</div>
+padding: 50px 30px;
 
+text-align: center;
 
-<!-- =========================================
-     DATE
-========================================== -->
+background: transparent;
 
-<div class="date">
+overflow: hidden;
 
-    <span>
-        OCTOBER
-    </span>
+border:
+    1px solid
+    rgba(
+        155,
+        131,
+        170,
+        0.3
+    );
 
-    <strong>
-        02
-    </strong>
+box-shadow:
+    0 20px 50px
+    rgba(
+        100,
+        70,
+        110,
+        0.15
+    );
 
-    <span>
-        FRIDAY
-    </span>
+}
 
-</div>
+/* =========================================
+WEDDING BACKGROUND
+========================================= */
 
+.content::before {
 
-<p class="time">
-    2026
-</p>
 
+content: "";
 
-<!-- =========================================
-     CEREMONY / RECEPTION
-========================================== -->
+position: absolute;
 
-<div class="venue-section">
+top: 0;
+left: 0;
 
-    <div class="venue-top">
+width: 100%;
+height: 100%;
 
-        <span>
-            CEREMONY
-        </span>
+background-image:
 
-        <span>
-            RECEPTION
-        </span>
+    linear-gradient(
+        rgba(
+            225,
+            200,
+            227,
+            0.55
+        ),
+        rgba(
+            225,
+            200,
+            227,
+            0.55
+        )
+    ),
 
-    </div>
+    url("WeddingBackground.jpg");
 
+background-size:
+    100% auto;
 
-    <div class="venue-line"></div>
+background-position:
+    top center;
 
+background-repeat:
+    repeat-y;
 
-    <div class="venue-bottom">
+z-index: 0;
 
-        <span>
-            STO. NIÑO CHURCH MOHON
-        </span>
+pointer-events: none;
 
-        <span>
-            GARCES ROYAL GARDEN
-        </span>
 
-    </div>
+}
 
-</div>
+/* =========================================
+CONTENT ABOVE BACKGROUND
+========================================= */
 
+.content > * {
 
-<!-- =========================================
-     VIEW DETAILS BUTTON
-========================================== -->
 
-<button
-    class="details-button"
-    onclick="showDetails()"
->
+position: relative;
 
-    VIEW DETAILS
+z-index: 1;
 
-</button>
 
+}
 
-<!-- =========================================
-     DETAILS
-========================================== -->
+/* =========================================
+TEXT
+========================================= */
 
-<div
-    id="details"
-    class="details"
->
+.small-title {
 
-    <p>
 
-        We would be delighted
-        to celebrate this special
-        day with you.
+font-size: 12px;
 
-    </p>
+letter-spacing: 3px;
 
+color: #a58bb5;
 
-    <p>
+margin-bottom: 25px;
 
-        Please save the date
-        and join us as we begin
-        this beautiful chapter.
+}
 
-    </p>
+h1 {
 
 
-    <h2>
-        GARCES ROYAL GARDEN
-    </h2>
+font-family:
+    'Bodoni Moda',
+    'Didot',
+    serif;
 
+font-weight: 700;
 
-    <p>
-        SAN ISIDRO RD, TALISAY
-    </p>
+font-style: italic;
 
+font-size: 45px;
 
-<!-- =========================================
-     WEDDING PARTY
-========================================== -->
+line-height: 1.2;
 
-<div class="wedding-party">
+color: #80618f;
 
-<!-- =====================================
-     PARENTS OF THE GROOM
-====================================== -->
 
-<section class="party-section">
+}
 
+h1 span {
 
-<h2>
-    Parents of the Groom
-</h2>
+display: block;
 
-<div class="party-table-wrapper">
+font-size: 25px;
 
-    <table class="party-table">
+margin: 5px 0;
 
-        <thead>
+color: #b28dbb;
 
-            <tr>
-                <th>Name</th>
-                <th>Role</th>
-            </tr>
+}
 
-        </thead>
+.subtitle {
 
-        <tbody>
 
-            <tr>
-                <td>Lilia C. Caruana</td>
-                <td>Mother of the Groom</td>
-            </tr>
+font-family:
+    'Bodoni Moda',
+    'Didot',
+    serif;
 
-            <tr>
-                <td>Teodoro Cabrillos</td>
-                <td>Father of the Groom</td>
-            </tr>
+font-weight: 700;
 
-        </tbody>
+font-style: italic;
 
-    </table>
+margin-top: 25px;
 
-</div>
+font-size: 12px;
 
-</section>
+letter-spacing: 2px;
 
-<!-- =====================================
-     PARENTS OF THE BRIDE
-====================================== -->
+color: #9b83aa;
 
-<section class="party-section">
 
-<h2>
-    Parents of the Bride
-</h2>
+}
 
-<div class="party-table-wrapper">
+.message {
 
-    <table class="party-table">
 
-        <thead>
+margin-top: 20px;
 
-            <tr>
-                <th>Name</th>
-                <th>Role</th>
-            </tr>
+font-family:
+    'Bodoni Moda',
+    'Didot',
+    serif;
 
-        </thead>
+font-weight: 700;
 
-        <tbody>
+font-style: italic;
 
-            <tr>
-                <td>Zita G. Oafer</td>
-                <td>Mother of the Bride</td>
-            </tr>
+font-size: 16px;
 
-            <tr>
-                <td>Emmanuelle G. Oafer</td>
-                <td>Father of the Bride</td>
-            </tr>
+line-height: 1.8;
 
-        </tbody>
+color: #91779e;
 
-    </table>
 
-</div>
+}
 
+/* =========================================
+DIVIDER
+========================================= */
 
-</section>
+.divider {
 
-<!-- =====================================
-     PRINCIPAL SPONSORS
-====================================== -->
 
-<section class="party-section">
+font-family:
+    'Bodoni Moda',
+    'Didot',
+    serif;
 
+font-weight: 700;
 
-<h2>
-    Principal Sponsors
-</h2>
+font-style: italic;
 
-<div class="party-table-wrapper">
+margin: 30px 0;
 
-    <table class="party-table">
+color: #b28dbb;
 
-        <thead>
+font-size: 25px;
 
-            <tr>
-                <th>Name</th>
-                <th>Couple</th>
-            </tr>
 
-        </thead>
+}
 
-        <tbody>
+/* =========================================
+DATE
+========================================= */
 
-            <tr>
-                <td>
-                    Hon. Atty. Dan Andrew
-                </td>
+.date {
 
-                <td>
-                    Imie C. Villaver
-                </td>
-            </tr>
 
-            <tr>
-                <td>
-                    Abdias Igloria
-                </td>
+font-family:
+    'Bodoni Moda',
+    'Didot',
+    serif;
 
-                <td>
-                    Gemma Igloria
-                </td>
-            </tr>
+font-weight: 700;
 
-            <tr>
-                <td>
-                    Wilner Cabalida Jr.
-                </td>
+font-style: italic;
 
-                <td>
-                    Marjorie L. Cabalida
-                </td>
-            </tr>
+display: flex;
 
-            <tr>
-                <td>
-                    James Cabrillos
-                </td>
+justify-content: center;
 
-                <td>
-                    Lenie Cabrillos
-                </td>
-            </tr>
+align-items: center;
 
-            <tr>
-                <td>
-                    Marites Galvez
-                </td>
+gap: 25px;
 
-                <td>
-                    Marilyn Go
-                </td>
-            </tr>
+color: #80618f;
 
-        </tbody>
 
-    </table>
+}
 
-</div>
+.date span {
 
 
-</section>
+font-size: 13px;
 
-<!-- =====================================
-     SECONDARY SPONSORS
-====================================== -->
+letter-spacing: 2px;
 
-<section class="party-section">
 
-<h2>
-    Secondary Sponsors
-</h2>
+}
 
-<p class="party-subtitle">
-    (Candle, Veil and Cord)
-</p>
+.date strong {
 
-<div class="party-table-wrapper">
 
-    <table class="party-table">
+font-family:
+    Georgia,
+    serif;
 
-        <thead>
+font-size: 55px;
 
-            <tr>
-                <th>Name</th>
-                <th>Partner</th>
-            </tr>
+font-weight: normal;
 
-        </thead>
 
-        <tbody>
+}
 
-            <tr>
-                <td>
-                    Joseph &amp; Hortezuela
-                </td>
+/* =========================================
+VENUE
+========================================= */
 
-                <td>
-                    AC Griffith
-                </td>
-            </tr>
+.venue-section {
 
-            <tr>
-                <td>
-                    Engelbert Oafer
-                </td>
 
-                <td>
-                    Reza Oafer
-                </td>
-            </tr>
+width: 100%;
 
-            <tr>
-                <td>
-                    Kenneth Macalam
-                </td>
+margin-top: 25px;
 
-                <td>
-                    Ellaine Macalam
-                </td>
-            </tr>
+color: #4e3f55;
 
-        </tbody>
 
-    </table>
+}
 
-</div>
+.venue-top {
 
 
-</section>
+font-family:
+    'Bodoni Moda',
+    'Didot',
+    serif;
 
-<!-- =====================================
-     ENTOURAGE
-====================================== -->
+font-weight: 700;
 
-<section class="party-section entourage-section">
+font-style: italic;
 
+display: grid;
 
-<h2>
-    Entourage
-</h2>
+grid-template-columns:
+    1fr 1fr;
 
+text-align: center;
 
-<!-- BESTMAN / MAID OF HONOR -->
+font-size: 13px;
 
-<div class="entourage-table-container">
+letter-spacing: 2px;
 
-    <h3 class="entourage-title">
-        Bestman &amp; Maid of Honor
-    </h3>
+}
 
-    <table class="party-table entourage-table">
+.venue-line {
 
-        <thead>
 
-            <tr>
-                <th>Bestman</th>
-                <th>Maid of Honor</th>
-            </tr>
+width: 1px;
 
-        </thead>
+height: 30px;
 
-        <tbody>
+background-color: #332e36;
 
-            <tr>
+margin: 5px auto 0;
 
-                <td>
-                    Mar Jayson Pimentel
-                </td>
 
-                <td>
-                    Estela G. Oafer
-                </td>
+}
 
-            </tr>
+.venue-bottom {
 
-        </tbody>
+font-family:
+    'Bodoni Moda',
+    'Didot',
+    serif;
 
-    </table>
+font-weight: 700;
 
-</div>
+font-style: italic;
 
+display: grid;
 
-<!-- GROOMSMEN / BRIDESMAIDS -->
+grid-template-columns:
+    1fr 1fr;
 
-<div class="entourage-table-container">
+text-align: center;
 
-    <h3 class="entourage-title">
-        Groomsmen &amp; Bridesmaids
-    </h3>
+font-size: 12px;
 
-    <table class="party-table entourage-table">
+letter-spacing: 1.5px;
 
-        <thead>
+color: #49245c;
 
-            <tr>
-                <th>Groomsmen</th>
-                <th>Bridesmaids</th>
-            </tr>
 
-        </thead>
+}
 
-        <tbody>
+/* =========================================
+YEAR
+========================================= */
 
-            <tr>
+.time {
 
-                <td>
-                    Ivan Kenneth O. Macalam
-                </td>
 
-                <td>
-                    AG Griffith Caruana
-                </td>
+font-family:
+    'Bodoni Moda',
+    'Didot',
+    serif;
 
-            </tr>
+font-weight: 700;
 
-            <tr>
+font-style: italic;
 
-                <td>
-                    Kai Alexis Oafer
-                </td>
+margin-top: 20px;
 
-                <td>
-                    Fedelyn Cabintoy
-                </td>
+font-size: 55px;
 
-            </tr>
+letter-spacing: 3px;
 
-            <tr>
 
-                <td>
-                    Manuel Chryster III Bagalay
-                </td>
+}
 
-                <td>
-                    Angela Galvez
-                </td>
+/* =========================================
+VIEW DETAILS BUTTON
+========================================= */
 
-            </tr>
+.details-button {
 
-            <tr>
 
-                <td>
-                    Carlo Lasola
-                </td>
+font-family:
+    'Bodoni Moda',
+    'Didot',
+    serif;
 
-                <td>
-                    Andriah Jessa Magallon
-                </td>
+font-weight: 700;
 
-            </tr>
+font-style: italic;
 
-        </tbody>
+margin-top: 35px;
 
-    </table>
+padding: 12px 25px;
 
-</div>
+border: none;
 
-</section>
+border-radius: 25px;
 
-<!-- =====================================
-     BEARERS
-====================================== -->
+background: #9b719e;
 
-<section class="party-section">
+color: white;
 
+font-size: 12px;
 
-<h2>
-    Bearers
-</h2>
+letter-spacing: 2px;
 
-<p class="party-subtitle">
-    (Bible, Coins, Ring)
-</p>
+cursor: pointer;
 
-<div class="party-table-wrapper">
+transition:
+    all 0.3s ease;
 
-    <table class="party-table">
 
-        <thead>
+}
 
-            <tr>
-                <th>Name</th>
-                <th>Item</th>
-            </tr>
+.details-button:hover {
 
-        </thead>
+background: #80618f;
 
-        <tbody>
+transform:
+    translateY(-2px);
 
-            <tr>
 
-                <td>
-                    Paul Kenneth O. Macalam
-                </td>
+}
 
-                <td>
-                    Bible
-                </td>
+.details-button:active {
 
-            </tr>
+transform:
+    scale(0.95);
 
-            <tr>
 
-                <td>
-                    Nathaniel
-                </td>
+}
 
-                <td>
-                    Coins
-                </td>
+/* =========================================
+DETAILS
+========================================= */
 
-            </tr>
+.details {
 
-            <tr>
+width: 100%;
 
-                <td>
-                    Zeke Elie O. Caruana
-                </td>
+max-height: 0;
 
-                <td>
-                    Ring
-                </td>
+overflow: hidden;
 
-            </tr>
+opacity: 0;
 
-        </tbody>
+color: #3e2b47;
 
-    </table>
+font-family:
+    Georgia,
+    serif;
 
-</div>
+font-size: 15px;
 
+line-height: 1.8;
 
-</section>
+margin-left: auto;
 
-<!-- =====================================
-     FLOWER GIRLS
-====================================== -->
+margin-right: auto;
 
-<section class="party-section">
+transition:
+    max-height 0.7s ease,
+    opacity 0.5s ease;
 
-<h2>
-    Flower Girls
-</h2>
+}
 
-<div class="party-table-wrapper">
+.details.show {
 
-    <table class="party-table">
+max-height: 10000px;
 
-        <thead>
+overflow: visible;
 
-            <tr>
-                <th>Name</th>
-                <th>Role</th>
-            </tr>
+opacity: 1;
 
-        </thead>
+margin-top: 25px;
 
-        <tbody>
 
-            <tr>
+}
 
-                <td>
-                    Prim Maiv C. Hortezuela
-                </td>
+.details p {
 
-                <td>
-                    Flower Girl
-                </td>
+margin-bottom: 15px;
 
-            </tr>
+letter-spacing: 2px;
 
-            <tr>
+color: #1f032e;
 
-                <td>
-                    Euodia Mae O. Balos
-                </td>
+font-family:
+    Georgia,
+    serif;
 
-                <td>
-                    Flower Girl
-                </td>
+font-size: 15px;
 
-            </tr>
+line-height: 1.2;
 
-        </tbody>
 
-    </table>
+}
 
-</div>
+/* =========================================
+WEDDING PARTY
+========================================= */
 
-</section>
+.wedding-party {
 
-</div>
 
-<!-- =========================================
-     DRESS CODE
-========================================== -->
+width: 100%;
 
-<div class="dress-code">
+max-width: 900px;
 
-<div></div>
+margin: 60px auto 40px;
 
-<span>
-    ♥ Wedding Dress Code ♥
-</span>
+text-align: center;
 
-<div></div>
 
+}
 
-</div>
+/* =========================================
+PARTY SECTION
+========================================= */
 
-<!-- =========================================
-     COLOR PALETTE
-========================================== -->
+.party-section {
 
-<h2 class="palette-title">
-    COLOR PALETTE
-</h2>
 
-<img
-src="Lavender.jpg"
-class="palette-image"
-alt="Lavender Color Palette"
+width: 100%;
 
->
+margin: 0 auto 60px;
 
-<!-- =========================================
-     GUEST COMMENTS
-========================================== -->
+text-align: center;
 
-<div class="comments-section">
 
+}
 
-<h2 class="comments-title">
-    ♥ Leave a Message ♥
-</h2>
+.party-section h2 {
 
 
-<p class="comments-subtitle">
+font-family:
+    "Times New Roman",
+    Times,
+    serif;
 
-    Share your wishes,
-    messages, and love with us.
+font-size: 26px;
 
-</p>
+letter-spacing: 3px;
 
+margin-bottom: 20px;
 
-<!-- =====================================
-     COMMENT FORM
-====================================== -->
+text-transform: uppercase;
 
-<div class="comment-form">
+color: #593968;
 
 
-    <input
-        type="text"
-        id="commentName"
-        placeholder="Your Name"
-        maxlength="40"
-    >
+}
 
+/* =========================================
+TABLE WRAPPER
+========================================= */
 
-    <textarea
-        id="commentText"
-        placeholder="Write your message..."
-        maxlength="300"
-    ></textarea>
+.party-table-wrapper {
 
+width: 100%;
 
-    <button
-        type="button"
-        id="postCommentButton"
-    >
+overflow-x: auto;
 
-        ♥ POST MESSAGE
+margin: 0 auto;
 
-    </button>
+border-radius: 16px;
 
-</div>
-
-
-<!-- =====================================
-     COMMENT STATUS
-====================================== -->
-
-<p
-    id="commentStatus"
-    class="comment-status"
-></p>
-
-
-<!-- =====================================
-     OTHER PEOPLE'S COMMENTS
-====================================== -->
-
-<div class="comments-list-section">
-
-
-    <h3>
-        Messages &amp; Wishes
-    </h3>
-
-
-    <div id="commentsList">
-
-        <p class="loading-comments">
-            Loading messages...
-        </p>
-
-    </div>
-
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</main>
-
-<!-- =========================================
-     FIREBASE
-========================================== -->
-
-<script type="module">
-
-    /*
-    =====================================================
-    FIREBASE IMPORTS
-    =====================================================
-    */
-
-    import {
-        initializeApp
-    } from
-    "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
-
-
-    import {
-        getFirestore,
-        collection,
-        addDoc,
-        query,
-        orderBy,
-        onSnapshot,
-        serverTimestamp
-    } from
-    "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
-
-
-    /*
-    =====================================================
-    FIREBASE CONFIGURATION
-    =====================================================
-
-    IMPORTANT:
-
-    Replace the values below with the Firebase
-    configuration from YOUR Firebase project.
-    */
-
-    const firebaseConfig = {
-
-        apiKey: "PASTE_YOUR_API_KEY_HERE",
-
-        authDomain:
-            "PASTE_YOUR_PROJECT.firebaseapp.com",
-
-        projectId:
-            "PASTE_YOUR_PROJECT_ID_HERE",
-
-        storageBucket:
-            "PASTE_YOUR_STORAGE_BUCKET_HERE",
-
-        messagingSenderId:
-            "PASTE_YOUR_MESSAGING_SENDER_ID_HERE",
-
-        appId:
-            "PASTE_YOUR_APP_ID_HERE"
-
-    };
-
-
-    /*
-    =====================================================
-    INITIALIZE FIREBASE
-    =====================================================
-    */
-
-    const app =
-        initializeApp(firebaseConfig);
-
-
-    /*
-    =====================================================
-    INITIALIZE FIRESTORE
-    =====================================================
-    */
-
-    const db =
-        getFirestore(app);
-
-
-    /*
-    =====================================================
-    COMMENT COLLECTION
-    =====================================================
-    */
-
-    const commentsCollection =
-        collection(
-            db,
-            "weddingComments"
-        );
-
-
-    /*
-    =====================================================
-    ELEMENTS
-    =====================================================
-    */
-
-    const nameInput =
-        document.getElementById(
-            "commentName"
-        );
-
-
-    const textInput =
-        document.getElementById(
-            "commentText"
-        );
-
-
-    const postButton =
-        document.getElementById(
-            "postCommentButton"
-        );
-
-
-    const commentsList =
-        document.getElementById(
-            "commentsList"
-        );
-
-
-    const commentStatus =
-        document.getElementById(
-            "commentStatus"
-        );
-
-
-    /*
-    =====================================================
-    POST COMMENT
-    =====================================================
-    */
-
-    postButton.addEventListener(
-        "click",
-        async function () {
-
-            const name =
-                nameInput.value.trim();
-
-
-            const message =
-                textInput.value.trim();
-
-
-            /*
-            CHECK EMPTY FIELDS
-            */
-
-            if (
-                name === "" ||
-                message === ""
-            ) {
-
-                commentStatus.textContent =
-                    "Please enter your name and message.";
-
-                commentStatus.className =
-                    "comment-status error";
-
-                return;
-
-            }
-
-
-            /*
-            DISABLE BUTTON
-            */
-
-            postButton.disabled = true;
-
-            postButton.textContent =
-                "♥ POSTING...";
-
-
-            commentStatus.textContent =
-                "Posting your message...";
-
-            commentStatus.className =
-                "comment-status";
-
-
-            try {
-
-
-                /*
-                =========================================
-                SAVE TO FIRESTORE
-                =========================================
-                */
-
-                await addDoc(
-                    commentsCollection,
-                    {
-
-                        name: name,
-
-                        message: message,
-
-                        createdAt:
-                            serverTimestamp()
-
-                    }
-                );
-
-
-                /*
-                CLEAR FORM
-                */
-
-                nameInput.value = "";
-
-                textInput.value = "";
-
-
-                commentStatus.textContent =
-                    "♥ Your message has been posted!";
-
-                commentStatus.className =
-                    "comment-status success";
-
-
-            }
-
-
-            catch (error) {
-
-                console.error(
-                    "Error posting comment:",
-                    error
-                );
-
-
-                commentStatus.textContent =
-                    "Sorry, your message could not be posted. Please try again.";
-
-                commentStatus.className =
-                    "comment-status error";
-
-            }
-
-
-            finally {
-
-                postButton.disabled = false;
-
-                postButton.textContent =
-                    "♥ POST MESSAGE";
-
-            }
-
-        }
+box-shadow:
+    0 10px 25px
+    rgba(
+        90,
+        55,
+        105,
+        0.13
     );
 
 
-    /*
-    =====================================================
-    REAL-TIME COMMENTS
-    =====================================================
+}
 
-    onSnapshot watches Firebase.
+/* =========================================
+WEDDING PARTY TABLE
+========================================= */
 
-    When ANYONE posts a message,
-    everyone's page receives the update.
-    */
+.party-table {
 
-    const commentsQuery =
-        query(
-            commentsCollection,
-            orderBy(
-                "createdAt",
-                "desc"
-            )
-        );
 
+width: 100%;
 
-    onSnapshot(
-        commentsQuery,
+border-collapse: separate;
 
-        function (snapshot) {
+border-spacing: 0;
 
-            commentsList.innerHTML = "";
+overflow: hidden;
 
+border:
+    1px solid
+    rgba(
+        130,
+        95,
+        145,
+        0.28
+    );
 
-            /*
-            NO COMMENTS
-            */
+border-radius: 16px;
 
-            if (snapshot.empty) {
+background:
+    rgba(
+        255,
+        255,
+        255,
+        0.55
+    );
 
-                commentsList.innerHTML = `
+font-family:
+    "Times New Roman",
+    Times,
+    serif;
 
-                    <p class="loading-comments">
-                        Be the first to leave a message. ♥
-                    </p>
+}
 
-                `;
+/* =========================================
+TABLE HEADER
+FIRST ROW = DIFFERENT COLOR
+========================================= */
 
-                return;
+.party-table thead th {
 
-            }
 
+padding:
+    15px 12px;
 
-            /*
-            DISPLAY COMMENTS
-            */
+background:
+    linear-gradient(
+        135deg,
+        #a98ab6,
+        #8f6c9d
+    );
 
-            snapshot.forEach(
-                function (docSnapshot) {
+color: #ffffff;
 
-                    const comment =
-                        docSnapshot.data();
+font-family:
+    "Times New Roman",
+    Times,
+    serif;
 
+font-size: 16px;
 
-                    /*
-                    COMMENT BOX
-                    */
+font-weight: bold;
 
-                    const commentBox =
-                        document.createElement(
-                            "div"
-                        );
+letter-spacing: 1.5px;
 
-                    commentBox.className =
-                        "comment-box";
+text-transform: uppercase;
 
+border-bottom:
+    2px solid
+    rgba(
+        255,
+        255,
+        255,
+        0.35
+    );
 
-                    /*
-                    NAME
-                    */
+}
 
-                    const guestName =
-                        document.createElement(
-                            "h4"
-                        );
+/* =========================================
+FIRST HEADER CELL
+========================================= */
 
-                    guestName.textContent =
-                        "♥ " +
-                        (comment.name || "Guest");
+.party-table thead th:first-child {
 
+border-top-left-radius: 14px;
 
-                    /*
-                    MESSAGE
-                    */
+}
 
-                    const guestMessage =
-                        document.createElement(
-                            "p"
-                        );
+/* =========================================
+LAST HEADER CELL
+========================================= */
 
-                    guestMessage.textContent =
-                        comment.message || "";
+.party-table thead th:last-child {
 
 
-                    /*
-                    DATE
-                    */
+border-top-right-radius: 14px;
 
-                    const commentDate =
-                        document.createElement(
-                            "small"
-                        );
 
+}
 
-                    if (
-                        comment.createdAt &&
-                        comment.createdAt.toDate
-                    ) {
+/* =========================================
+TABLE BODY CELLS
+========================================= */
 
-                        const date =
-                            comment.createdAt.toDate();
+.party-table tbody td {
 
+padding:
+    13px 12px;
 
-                        commentDate.textContent =
-                            date.toLocaleString();
+font-size: 16px;
 
-                    }
+line-height: 1.5;
 
-                    else {
+color: #4c3456;
 
-                        commentDate.textContent =
-                            "Just now";
-
-                    }
-
-
-                    /*
-                    ADD ELEMENTS
-                    */
-
-                    commentBox.appendChild(
-                        guestName
-                    );
-
-
-                    commentBox.appendChild(
-                        guestMessage
-                    );
-
-
-                    commentBox.appendChild(
-                        commentDate
-                    );
-
-
-                    /*
-                    ADD TO LIST
-                    */
-
-                    commentsList.appendChild(
-                        commentBox
-                    );
-
-                }
-            );
-
-        },
-
-
-        function (error) {
-
-            console.error(
-                "Error loading comments:",
-                error
-            );
-
-
-            commentsList.innerHTML = `
-
-                <p class="loading-comments error">
-                    Unable to load messages.
-                    Please check your internet connection.
-                </p>
-
-            `;
-
-        }
-
+border-bottom:
+    1px solid
+    rgba(
+        130,
+        95,
+        145,
+        0.15
     );
 
 
-    /*
-    =====================================================
-    VIEW DETAILS
-    =====================================================
-    */
+}
 
-    window.showDetails =
-        function () {
+/* =========================================
+ALTERNATING ROWS
+========================================= */
 
-            const details =
-                document.getElementById(
-                    "details"
-                );
+.party-table tbody tr:nth-child(odd) td {
 
 
-            details.classList.toggle(
-                "show"
-            );
+background:
+    rgba(
+        255,
+        255,
+        255,
+        0.72
+    );
 
-        };
+
+}
+
+.party-table tbody tr:nth-child(even) td {
 
 
-    /*
-    =====================================================
-    BACKGROUND MUSIC
-    =====================================================
-    */
+background:
+    rgba(
+        237,
+        224,
+        243,
+        0.75
+    );
 
-    const weddingMusic =
-        document.getElementById(
-            "weddingMusic"
+
+}
+
+/* =========================================
+SECOND COLUMN ALTERNATING COLOR
+========================================= */
+
+.party-table tbody td:nth-child(2) {
+
+
+background:
+    rgba(
+        220,
+        201,
+        229,
+        0.55
+    );
+
+}
+
+.party-table tbody tr:nth-child(even) td:nth-child(2) {
+
+
+background:
+    rgba(
+        207,
+        185,
+        220,
+        0.65
+    );
+
+
+}
+
+/* =========================================
+TABLE HOVER
+========================================= */
+
+.party-table tbody tr {
+
+
+transition:
+    all 0.25s ease;
+
+
+}
+
+.party-table tbody tr:hover td {
+
+background:
+    rgba(
+        207,
+        185,
+        220,
+        0.75
+    );
+
+}
+
+/* =========================================
+LAST ROW
+========================================= */
+
+.party-table tbody tr:last-child td {
+
+
+border-bottom: none;
+
+
+}
+
+/* =========================================
+LAST BODY CORNERS
+========================================= */
+
+.party-table tbody tr:last-child td:first-child {
+
+
+border-bottom-left-radius: 14px;
+
+
+}
+
+.party-table tbody tr:last-child td:last-child {
+
+border-bottom-right-radius: 14px;
+
+}
+
+/* =========================================
+PARTY SUBTITLE
+========================================= */
+
+.party-subtitle {
+
+font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+font-size: 14px;
+
+font-style: italic;
+
+margin-top: -8px;
+
+margin-bottom: 20px;
+
+color: #80618f;
+
+}
+
+/* =========================================
+ENTOURAGE
+========================================= */
+
+.entourage-section {
+
+width: 100%;
+
+
+}
+
+.entourage-title {
+
+
+margin-top: 25px;
+
+margin-bottom: 12px;
+
+font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+font-size: 18px;
+
+letter-spacing: 2px;
+
+text-transform: uppercase;
+
+color: #80618f;
+
+}
+
+.entourage-table-container {
+
+
+width: 100%;
+
+margin-bottom: 35px;
+
+
+}
+
+.entourage-table {
+
+
+width: 100%;
+
+}
+
+/* =========================================
+DRESS CODE
+========================================= */
+
+.dress-code {
+
+display: flex;
+
+align-items: center;
+
+font-size: 18px;
+
+color: #2d143c;
+
+margin: 20px 0;
+
+}
+
+.dress-code div {
+
+
+flex: 1;
+
+height: 2px;
+
+background-color: #a58bb5;
+
+}
+
+.dress-code span {
+
+padding:
+    0 15px;
+
+font-family:
+    Georgia,
+    serif;
+
+font-size: 20px;
+
+line-height: 1.8;
+
+
+}
+
+/* =========================================
+COLOR PALETTE
+========================================= */
+
+.palette-title {
+
+
+letter-spacing: 5px;
+
+margin-top: 10px;
+
+margin-bottom: 10px;
+
+
+}
+
+.palette-image {
+
+
+max-width: 100%;
+
+height: auto;
+
+display: block;
+
+margin: 0 auto;
+
+}
+
+/* =========================================
+COMMENTS SECTION
+========================================= */
+
+.comments-section {
+
+
+position: relative;
+
+margin-top: 45px;
+
+padding:
+    38px 25px 30px;
+
+border-radius: 25px;
+
+background:
+    linear-gradient(
+        145deg,
+        rgba(
+            255,
+            255,
+            255,
+            0.65
+        ),
+        rgba(
+            238,
+            219,
+            244,
+            0.55
+        )
+    );
+
+border:
+    1px solid
+    rgba(
+        165,
+        139,
+        181,
+        0.45
+    );
+
+box-shadow:
+
+    0 20px 45px
+    rgba(
+        90,
+        55,
+        105,
+        0.16
+    ),
+
+    inset 0 1px 0
+    rgba(
+        255,
+        255,
+        255,
+        0.8
+    );
+
+backdrop-filter:
+    blur(12px);
+
+-webkit-backdrop-filter:
+    blur(12px);
+
+overflow: hidden;
+
+}
+
+/* =========================================
+DECORATIVE GLOW
+========================================= */
+
+.comments-section::before {
+
+content: "";
+
+position: absolute;
+
+width: 180px;
+
+height: 180px;
+
+top: -90px;
+
+left: -70px;
+
+border-radius: 50%;
+
+background:
+    rgba(
+        210,
+        174,
+        222,
+        0.28
+    );
+
+filter:
+    blur(25px);
+
+pointer-events: none;
+
+
+}
+
+.comments-section::after {
+
+
+content: "♥";
+
+position: absolute;
+
+top: 12px;
+
+right: 20px;
+
+color:
+    rgba(
+        165,
+        139,
+        181,
+        0.25
+    );
+
+font-size: 30px;
+
+animation:
+    luxuryHeart
+    3s ease-in-out infinite;
+
+}
+
+@keyframes luxuryHeart {
+
+
+0%,
+100% {
+
+    transform:
+        translateY(0)
+        rotate(-8deg);
+
+    opacity: 0.35;
+}
+
+50% {
+
+    transform:
+        translateY(-7px)
+        rotate(8deg);
+
+    opacity: 0.8;
+}
+
+}
+
+/* =========================================
+COMMENTS TITLE
+========================================= */
+
+.comments-title {
+
+
+position: relative;
+
+color: #80618f;
+
+font-family:
+    Georgia,
+    serif;
+
+font-size: 28px;
+
+font-weight: normal;
+
+letter-spacing: 2px;
+
+margin-bottom: 10px;
+
+text-shadow:
+    0 2px 8px
+    rgba(
+        128,
+        97,
+        143,
+        0.18
+    );
+
+}
+
+.comments-title::after {
+
+content: "";
+
+display: block;
+
+width: 55px;
+
+height: 1px;
+
+margin:
+    12px auto 0;
+
+background:
+    linear-gradient(
+        to right,
+        transparent,
+        #a58bb5,
+        transparent
+    );
+
+
+}
+
+/* =========================================
+COMMENTS SUBTITLE
+========================================= */
+
+.comments-subtitle {
+
+color: #91779e;
+
+font-family:
+    Georgia,
+    serif;
+
+font-size: 14px;
+
+font-style: italic;
+
+letter-spacing: 1px;
+
+line-height: 1.7;
+
+margin-bottom: 25px;
+
+
+}
+
+/* =========================================
+COMMENT FORM
+========================================= */
+
+.comment-form {
+
+
+position: relative;
+
+display: flex;
+
+flex-direction: column;
+
+gap: 14px;
+
+align-items: center;
+
+
+}
+
+/* =========================================
+INPUTS
+========================================= */
+
+.comment-form input,
+.comment-form textarea {
+
+width: 100%;
+
+padding:
+    15px 18px;
+
+border:
+    1px solid
+    rgba(
+        155,
+        126,
+        170,
+        0.35
+    );
+
+border-radius: 14px;
+
+background:
+    rgba(
+        255,
+        255,
+        255,
+        0.55
+    );
+
+color: #80618f;
+
+font-family:
+    Georgia,
+    serif;
+
+font-size: 14px;
+
+outline: none;
+
+text-align: center;
+
+box-shadow:
+    inset 0 2px 8px
+    rgba(
+        100,
+        70,
+        110,
+        0.05
+    );
+
+transition:
+    all 0.4s ease;
+
+
+}
+
+.comment-form input::placeholder,
+.comment-form textarea::placeholder {
+
+color: #a58bb5;
+
+font-family:
+    Georgia,
+    serif;
+
+font-style: italic;
+
+}
+
+.comment-form input:hover,
+.comment-form textarea:hover {
+
+background:
+    rgba(
+        255,
+        255,
+        255,
+        0.75
+    );
+
+border-color:
+    rgba(
+        155,
+        113,
+        158,
+        0.55
+    );
+
+transform:
+    translateY(-1px);
+
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+
+
+background:
+    rgba(
+        255,
+        255,
+        255,
+        0.85
+    );
+
+border-color: #9b719e;
+
+box-shadow:
+
+    0 0 0 3px
+    rgba(
+        155,
+        113,
+        158,
+        0.10
+    ),
+
+    0 8px 20px
+    rgba(
+        100,
+        70,
+        110,
+        0.10
+    );
+
+transform:
+    translateY(-2px);
+
+}
+
+.comment-form textarea {
+
+
+min-height: 125px;
+
+resize: vertical;
+
+
+}
+
+/* =========================================
+POST BUTTON
+========================================= */
+
+.comment-form button {
+
+position: relative;
+
+overflow: hidden;
+
+padding:
+    14px 25px;
+
+border:
+    1px solid
+    rgba(
+        255,
+        255,
+        255,
+        0.5
+    );
+
+border-radius: 30px;
+
+background:
+    linear-gradient(
+        135deg,
+        #b28dbb,
+        #8f6599,
+        #b28dbb
+    );
+
+background-size:
+    200% 200%;
+
+color: white;
+
+font-family:
+    Georgia,
+    serif;
+
+font-size: 12px;
+
+letter-spacing: 3px;
+
+cursor: pointer;
+
+margin-left: auto;
+margin-right: auto;
+
+box-shadow:
+    0 8px 20px
+    rgba(
+        128,
+        97,
+        143,
+        0.25
+    );
+
+transition:
+    all 0.4s ease;
+
+animation:
+    buttonGlow
+    3s ease-in-out infinite;
+
+
+}
+
+.comment-form button::before {
+
+
+content: "";
+
+position: absolute;
+
+top: 0;
+
+left: -100%;
+
+width: 70%;
+
+height: 100%;
+
+background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(
+            255,
+            255,
+            255,
+            0.45
+        ),
+        transparent
+    );
+
+transform:
+    skewX(-20deg);
+
+transition:
+    0.6s;
+
+
+}
+
+.comment-form button:hover::before {
+
+left: 130%;
+
+}
+
+.comment-form button:hover {
+
+background-position:
+    right center;
+
+transform:
+    translateY(-3px);
+
+box-shadow:
+    0 12px 28px
+    rgba(
+        128,
+        97,
+        143,
+        0.35
+    );
+
+}
+
+.comment-form button:active {
+
+
+transform:
+    scale(0.97);
+
+
+}
+
+@keyframes buttonGlow {
+
+0%,
+100% {
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            128,
+            97,
+            143,
+            0.20
+        );
+}
+
+50% {
+
+    box-shadow:
+        0 8px 28px
+        rgba(
+            128,
+            97,
+            143,
+            0.40
         );
 
 
-    window.addEventListener(
-        "load",
-        function () {
+}
+}
 
-            weddingMusic.volume = 0.5;
+/* =========================================
+MESSAGES LIST
+========================================= */
+
+.comments-list-section{
 
 
-            const playMusic =
-                weddingMusic.play();
+    margin-top: 38px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid
+        rgba(
+            128,
+            97,
+            143,
+            0.15
+        );
 
 
-            if (
-                playMusic !== undefined
-            ) {
+}
 
-                playMusic.catch(
-                    function () {
+.comments-list-section h3 {
 
-                        document.addEventListener(
-                            "click",
+color: #80618f;
 
-                            function startMusic() {
+font-family:
+    Georgia,
+    serif;
 
-                                weddingMusic.play();
+font-size: 21px;
 
-                                document.removeEventListener(
-                                    "click",
-                                    startMusic
-                                );
+font-weight: normal;
 
-                            },
+letter-spacing: 2px;
 
-                            {
-                                once: true
-                            }
+margin-bottom: 20px;
 
-                        );
 
-                    }
-                );
+}
 
-            }
+/* =========================================
+COMMENT BOX
+========================================= */
 
-        }
+.comment-box {
+
+
+position: relative;
+
+text-align: center;
+
+padding:
+    20px 20px 17px;
+
+margin-bottom: 17px;
+
+border-radius: 16px;
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(
+            255,
+            255,
+            255,
+            0.70
+        ),
+        rgba(
+            245,
+            232,
+            248,
+            0.60
+        )
     );
 
-</script>
+border:
+    1px solid
+    rgba(
+        165,
+        139,
+        181,
+        0.25
+    );
 
-</body>
+border-left:
+    3px solid
+    #a58bb5;
 
-</html>
+box-shadow:
+    0 8px 20px
+    rgba(
+        100,
+        70,
+        110,
+        0.09
+    );
+
+backdrop-filter:
+    blur(8px);
+
+-webkit-backdrop-filter:
+    blur(8px);
+
+transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+
+animation:
+    messageAppear
+    0.6s ease;
+
+
+}
+
+.comment-box:hover {
+
+
+transform:
+    translateY(-4px);
+
+box-shadow:
+    0 14px 28px
+    rgba(
+        100,
+        70,
+        110,
+        0.15
+    );
+
+
+}
+
+.comment-box::after {
+
+
+content: "♥";
+
+position: absolute;
+
+top: 13px;
+
+right: 17px;
+
+font-size: 15px;
+
+color:
+    rgba(
+        165,
+        139,
+        181,
+        0.45
+    );
+
+}
+
+.comment-box h4 {
+
+
+color: #80618f;
+
+font-family:
+    Georgia,
+    serif;
+
+font-size: 17px;
+
+font-weight: normal;
+
+letter-spacing: 1px;
+
+margin-bottom: 9px;
+
+text-align: center;
+
+
+}
+
+.comment-box p {
+
+color: #91779e;
+
+font-family:
+    Georgia,
+    serif;
+
+font-size: 14px;
+
+line-height: 1.7;
+
+letter-spacing: 0;
+
+margin-bottom: 10px;
+
+word-wrap: break-word;
+
+text-align: center;
+
+}
+
+.comment-box small {
+
+color: #b09db8;
+
+font-family:
+    Arial,
+    sans-serif;
+
+font-size: 10px;
+
+letter-spacing: 0.5px;
+
+text-align: center;
+
+}
+
+@keyframes messageAppear {
+
+from {
+
+    opacity: 0;
+
+    transform:
+        translateY(15px)
+        scale(0.98);
+}
+
+to {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+}
+
+/* =========================================
+FINAL CENTERING
+========================================= */
+
+.content,
+.content * {
+
+text-align: center;
+
+
+}
+
+.details,
+.wedding-party {
+
+width: 100%;
+
+margin-left: auto;
+
+margin-right: auto;
+
+
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+
+.invitation {
+
+    padding:
+        25px 12px;
+}
+
+
+.content {
+
+    padding:
+        40px 15px;
+}
+
+
+.content::before {
+
+    background-size:
+        100% auto;
+
+    background-position:
+        top center;
+
+    background-repeat:
+        repeat-y;
+}
+
+
+h1 {
+
+    font-size: 32px;
+}
+
+
+h1 span {
+
+    font-size: 20px;
+}
+
+
+.date {
+
+    gap: 15px;
+}
+
+
+.date strong {
+
+    font-size: 45px;
+}
+
+
+.venue-top {
+
+    font-size: 11px;
+}
+
+
+.venue-bottom {
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+.venue-line {
+
+    height: 30px;
+}
+
+
+.time {
+
+    font-size: 45px;
+}
+
+
+.dress-code span {
+
+    font-size: 15px;
+
+    padding:
+        0 8px;
+}
+
+
+.petal {
+
+    max-width: 35px;
+}
+
+
+/* =====================================
+   MOBILE WEDDING TABLES
+===================================== */
+
+.wedding-party {
+
+    width: 100%;
+
+    margin-top: 45px;
+}
+
+
+.party-section {
+
+    margin-bottom: 45px;
+}
+
+
+.party-section h2 {
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+
+.party-table-wrapper {
+
+    width: 100%;
+
+    overflow-x: hidden;
+}
+
+
+.party-table {
+
+    width: 100%;
+
+    table-layout: fixed;
+}
+
+
+.party-table thead th {
+
+    padding:
+        11px 6px;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+.party-table tbody td {
+
+    padding:
+        11px 6px;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    word-break: normal;
+
+    overflow-wrap: break-word;
+}
+
+
+.party-subtitle {
+
+    font-size: 12px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =====================================
+   MOBILE ENTOURAGE
+===================================== */
+
+.entourage-section {
+
+    width: 100%;
+}
+
+
+.entourage-title {
+
+    font-size: 14px;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 10px;
+}
+
+
+.entourage-table-container {
+
+    margin-bottom: 28px;
+}
+
+
+.entourage-table thead th {
+
+    font-size: 11px;
+
+    padding:
+        11px 5px;
+}
+
+
+.entourage-table tbody td {
+
+    font-size: 12px;
+
+    padding:
+        10px 5px;
+}
+
+
+/* =====================================
+   MOBILE COMMENTS
+===================================== */
+
+.comments-section {
+
+    margin-top: 35px;
+
+    padding:
+        30px 17px 25px;
+
+    border-radius: 22px;
+}
+
+
+.comments-title {
+
+    font-size: 23px;
+}
+
+
+.comments-subtitle {
+
+    font-size: 12px;
+}
+
+
+.comment-form input,
+.comment-form textarea {
+
+    padding:
+        14px 15px;
+}
+
+
+.comment-form textarea {
+
+    min-height: 115px;
+}
+
+
+.comment-form button {
+
+    padding:
+        13px 18px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.comment-box {
+
+    padding: 17px;
+}
+
+
+.comment-box h4 {
+
+    font-size: 16px;
+}
+
+
+.comment-box p {
+
+    font-size: 13px;
+}
+
+
+}
+
+/* =========================================
+EXTRA SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+
+
+.content {
+
+    padding:
+        35px 10px;
+}
+
+
+.party-table thead th {
+
+    font-size: 10px;
+
+    padding:
+        10px 4px;
+}
+
+
+.party-table tbody td {
+
+    font-size: 11px;
+
+    padding:
+        9px 4px;
+}
+
+
+.party-section h2 {
+
+    font-size: 18px;
+
+    letter-spacing: 1.5px;
+}
+
+
+.entourage-table thead th {
+
+    font-size: 9px;
+}
+
+
+.entourage-table tbody td {
+
+    font-size: 10px;
+}
+
+
+
+}
+/* =========================================
+SHARED WEDDING COMMENTS
+========================================= */
+
+.comments-section {
+
+width: 100%;
+max-width: 850px;
+
+margin: 50px auto 30px;
+
+padding: 30px 20px;
+
+text-align: center;
+
+}
+
+/* =========================================
+COMMENTS TITLE
+========================================= */
+
+.comments-title {
+
+margin-bottom: 10px;
+
+color: #80618f;
+
+font-size: 28px;
+
+letter-spacing: 2px;
+
+}
+
+.comments-subtitle {
+
+margin-bottom: 25px;
+
+color: #80618f;
+
+font-size: 15px;
+
+line-height: 1.6;
+
+}
+
+/* =========================================
+COMMENT FORM
+========================================= */
+
+.comment-form {
+
+width: 100%;
+
+max-width: 650px;
+
+margin: 0 auto 20px;
+
+display: flex;
+
+flex-direction: column;
+
+gap: 12px;
+
+}
+
+/* =========================================
+NAME INPUT
+========================================= */
+
+.comment-form input {
+
+width: 100%;
+
+padding: 14px 16px;
+
+border: 1px solid #c7afd1;
+
+border-radius: 10px;
+
+background: rgba(
+    255,
+    255,
+    255,
+    0.75
+);
+
+color: #5f4769;
+
+font-size: 15px;
+
+outline: none;
+
+}
+
+/* =========================================
+MESSAGE TEXTAREA
+========================================= */
+
+.comment-form textarea {
+
+width: 100%;
+
+min-height: 120px;
+
+resize: vertical;
+
+padding: 14px 16px;
+
+border: 1px solid #c7afd1;
+
+border-radius: 10px;
+
+background: rgba(
+    255,
+    255,
+    255,
+    0.75
+);
+
+color: #5f4769;
+
+font-size: 15px;
+
+line-height: 1.5;
+
+outline: none;
+
+}
+
+/* =========================================
+INPUT FOCUS
+========================================= */
+
+.comment-form input,
+.comment-form textarea {
+
+border-color: #9b7aaa;
+
+box-shadow:
+    0 0 0 3px
+    rgba(
+        155,
+        122,
+        170,
+        0.15
+    );
+
+}
+
+/* =========================================
+POST BUTTON
+========================================= */
+
+.comment-form button {
+
+width: 100%;
+
+padding: 14px 20px;
+
+border: none;
+
+border-radius: 10px;
+
+background:
+    linear-gradient(
+        135deg,
+        #9b7aaa,
+        #80618f
+    );
+
+color: white;
+
+font-size: 14px;
+
+font-weight: bold;
+
+letter-spacing: 1px;
+
+cursor: pointer;
+
+transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+
+}
+
+/* =========================================
+BUTTON HOVER
+========================================= */
+
+.comment-form button {
+
+transform:
+    translateY(-2px);
+
+}
+
+/* =========================================
+BUTTON DISABLED
+========================================= */
+
+.comment-form button {
+
+opacity: 0.6;
+
+cursor: not-allowed;
+
+transform: none;
+
+}
+
+/* =========================================
+COMMENT STATUS
+========================================= */
+
+.comment-status {
+
+min-height: 24px;
+
+margin: 10px auto 20px;
+
+color: #80618f;
+
+font-size: 14px;
+
+}
+
+.comment-status.success {
+
+color: #66835f;
+
+}
+
+.comment-status.error {
+
+color: #a45f68;
+
+}
+
+/* =========================================
+COMMENTS LIST SECTION
+========================================= */
+
+.comments-list-section {
+
+width: 100%;
+
+max-width: 750px;
+
+margin: 30px auto 0;
+
+}
+
+.comments-list-section h3 {
+
+margin-bottom: 20px;
+
+color: #80618f;
+
+font-size: 21px;
+
+letter-spacing: 1px;
+
+}
+
+/* =========================================
+COMMENTS LIST
+========================================= */
+
+#commentsList {
+
+width: 100%;
+
+display: flex;
+
+flex-direction: column;
+
+gap: 15px;
+
+}
+
+/* =========================================
+COMMENT BOX
+========================================= */
+
+.comment-box {
+
+width: 100%;
+
+padding: 18px 20px;
+
+text-align: left;
+
+background:
+    rgba(
+        255,
+        255,
+        255,
+        0.75
+    );
+
+border:
+    1px solid
+    rgba(
+        128,
+        97,
+        143,
+        0.25
+    );
+
+border-radius: 12px;
+
+box-shadow:
+    0 5px 15px
+    rgba(
+        80,
+        50,
+        90,
+        0.08
+    );
+
+word-wrap: break-word;
+
+overflow-wrap: anywhere;
+
+}
+
+/* =========================================
+COMMENT NAME
+========================================= */
+
+.comment-box h4 {
+
+margin-bottom: 8px;
+
+color: #80618f;
+
+font-size: 16px;
+
+}
+
+/* =========================================
+COMMENT MESSAGE
+========================================= */
+
+.comment-box p {
+
+margin: 0 0 10px;
+
+color: #59455f;
+
+font-size: 15px;
+
+line-height: 1.6;
+
+white-space: pre-wrap;
+
+}
+
+/* =========================================
+COMMENT DATE
+========================================= */
+
+.comment-box small {
+
+display: block;
+
+color: #9b8aa0;
+
+font-size: 11px;
+
+}
+
+/* =========================================
+LOADING MESSAGE
+========================================= */
+
+.loading-comments {
+
+padding: 20px;
+
+color: #80618f;
+
+font-size: 14px;
+
+text-align: center;
+
+}
+
+/* =========================================
+MOBILE COMMENTS
+========================================= */
+
+@media (max-width: 600px) {
+
+.comments-section {
+
+    padding:
+        25px 12px;
+
+    margin-top: 35px;
+
+}
+
+
+.comments-title {
+
+    font-size: 23px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.comments-subtitle {
+
+    font-size: 13px;
+
+}
+
+
+.comment-form input,
+.comment-form textarea {
+
+    font-size: 14px;
+
+}
+
+
+.comment-form textarea {
+
+    min-height: 110px;
+
+}
+
+
+.comment-box {
+
+    padding: 15px;
+
+}
+
+
+.comment-box h4 {
+
+    font-size: 15px;
+
+}
+
+
+.comment-box p {
+
+    font-size: 14px;
+
+}
+
+}
